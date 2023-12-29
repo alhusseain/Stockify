@@ -1,0 +1,457 @@
+﻿@* @page
+@model WebApplication1.Pages.productsModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #343a40; /* Dark background color */
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            left: 0; /* Align to the far left side */
+            top: 56px; /* Adjusted from 0 to provide space for the top navbar */
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            color: #ffffff; /* Light text color */
+            z-index: 1000; /* Ensure the sidebar is on top of other elements */
+        }
+
+        .categories {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .category-item, .category-heading {
+            margin-bottom: 10px;
+        }
+
+        .category-link, .category-heading {
+            text-decoration: none;
+            color: #ffffff; /* Light text color */
+            font-weight: bold;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+            .category-link:hover, .category-heading:hover {
+                background-color: #495057; /* Bootstrap hover background color */
+            }
+
+        /* Adjust container padding to accommodate the sidebar */
+        .container {
+            margin-left: 250px; /* Width of the sidebar */
+            padding-top: 56px; /* Height of the existing navbar */
+        }
+
+        /* Ensure the top navbar doesn't overlap with the sidebar content */
+        .content {
+            padding-top: 20px; /* Adjust the value as needed */
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 50px; /* Adjust to match the width of the sidebar */
+            padding-top: 20px; /* Match the padding of the content */
+        }
+
+        .product-tile {
+            flex: 0 0 200px; /* Adjust the width as needed */
+            margin-right: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-info {
+            position: relative;
+            bottom:23%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 2px; /* Adjusted from 5px to make it smaller */
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            display: none;
+        }
+
+        .product-tile:hover .product-info {
+            display: block;
+        }
+
+        .product-info p {
+            margin: 0;
+            padding: 2px; /* Adjusted from 3px to make it smaller */
+        }
+
+        .product-tile img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .product-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 3px; /* Adjusted from 5px to make it smaller */
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h4 class="mb-4 category-heading" data-toggle="collapse" href="#categoriesCollapse" role="button" aria-expanded="false" aria-controls="categoriesCollapse">
+            Categories
+        </h4>
+        <div class="collapse" id="categoriesCollapse">
+            <ul class="categories">
+                <li class="category-item">
+                    <a href="#" class="category-link" data-category="grocery">Grocery</a>
+                </li>
+                <li class="category-item">
+                    <a href="#" class="category-link" data-category="snacks">Snacks</a>
+                </li>
+                <li class="category-item">
+                    <a href="#" class="category-link" data-category="drinks">Drinks</a>
+                </li>
+                <!-- Add more categories as needed -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <!-- Main content goes here -->
+        </div>
+    </div>
+
+    <!-- Display area for products outside the sidebar -->
+    <div class="product-container" id="productContainer"></div>
+
+    <script>
+        // Example product data for each category
+        const products = {
+            grocery: [
+                { name: 'Rice', image: '/static/doha.jpg', quantity: 5, company: 'Al Doha Foods' },
+                { name: 'Crystal Oil', image: '/static/oil.png', quantity: 5, company: 'Arma For food indrustries' },
+                // Add more products as needed
+            ],
+            snacks: [
+                { name: 'Corona Hazelnut Chocolate', image: '/static/corona1.png', quantity: 13, company: 'Corona Co.' },
+                { name: 'Corona Milk Chocolate', image: '/static/corona2.png', quantity: 13, company: 'Corona Co.' },
+                { name: 'Corona Dark Chocolate', image: '/static/corona3.png', quantity: 13, company: 'Corona Co.' },
+            ],
+            drinks: [
+                { name: 'Spiro Spathis Apple', image: '/static/spiro1.png', quantity: 20, company: 'Spiro Spathis Co.' },
+                { name: 'Spiro Spathis Lemonade', image: '/static/spiro2.png', quantity: 15, company: 'Spiro Spathis Co.' },
+                { name: 'Spiro Spathis Grapes', image: '/static/spiro3.png', quantity: 12, company: 'Spiro Spathis Co.' },
+                { name: 'Spiro Spathis Mandarin', image: '/static/spiro4.png', quantity: 18, company: 'Spiro Spathis Co.' },
+                { name: 'Spiro Spathis Peach', image: '/static/spiro5.png', quantity: 25, company: 'Spiro Spathis Co.' },
+                { name: 'Spiro Spathis Pineapple', image: '/static/spiro6.png', quantity: 30, company: 'Spiro Spathis Co.' },
+                { name: 'Spiro Spathis Kiwi', image: '/static/spiro7.png', quantity: 10, company: 'Spiro Spathis Co.' },
+                // Add more drinks as needed
+            ],
+            // Add more categories with their respective products
+        };
+
+        $(document).ready(function () {
+            $('.category-link').click(function () {
+                const category = $(this).data('category');
+                displayProducts(products[category]);
+            });
+        });
+
+        function displayProducts(productList) {
+            const productContainer = $('#productContainer');
+            productContainer.empty(); // Clear previous products
+
+            productList.forEach(product => {
+                const productTile = $('<div class="product-tile"></div>');
+                const productImage = $('<img src="' + product.image + '" alt="' + product.name + '">');
+                const productInfo = $('<div class="product-info">' +
+                    '<p>Quantity: ' + product.quantity + '</p>' +
+                    '<p>Supplier: ' + product.company + '</p>' +
+                    '</div>');
+                const productName = $('<div class="product-name">' + product.name + '</div>');
+
+                productTile.append(productImage, productInfo, productName);
+                productContainer.append(productTile);
+            });
+        }
+    </script>
+</body>
+</html> *@
+
+
+
+
+@page
+@model WebApplication1.Pages.ProductsModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #343a40; 
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            left: 0; 
+            top: 56px; 
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            color: #ffffff; 
+            z-index: 1000; 
+        }
+
+        .categories {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .category-item, .category-heading {
+            margin-bottom: 10px;
+        }
+
+        .category-link, .category-heading {
+            text-decoration: none;
+            color: #ffffff; 
+            font-weight: bold;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+            .category-link:hover, .category-heading:hover {
+                background-color: #495057; 
+            }
+
+        
+        .container {
+            margin-left: 250px; 
+            padding-top: 56px; 
+
+       
+        .content {
+            padding-top: 20px;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 50px; 
+            padding-top: 20px; 
+        }
+
+        .product-tile {
+            flex: 0 0 200px; 
+            margin-right: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-info {
+            position: relative;
+            bottom: 23%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 2px; 
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            display: none;
+        }
+
+        .product-tile:hover .product-info {
+            display: block;
+        }
+
+        .product-info p {
+            margin: 0;
+            padding: 2px; 
+        }
+
+        .product-tile img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .product-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 3px; 
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+   
+        
+
+        
+        .chosen-quantity {
+            display: inline-block;
+            margin: 0 5px; 
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h4 class="mb-4 category-heading" data-toggle="collapse" href="#categoriesCollapse" role="button" aria-expanded="false" aria-controls="categoriesCollapse">
+            Categories
+        </h4>
+        <div class="collapse" id="categoriesCollapse">
+            <ul class="categories">
+                <li class="category-item">
+                    <a href="#" class="category-link" data-category="grocery">Grocery</a>
+                </li>
+                <li class="category-item">
+                    <a href="#" class="category-link" data-category="snacks">Snacks</a>
+                </li>
+                <li class="category-item">
+                    <a href="#" class="category-link" data-category="drinks">Drinks</a>
+                </li>
+                <!-- Add more categories as needed -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            
+        </div>
+    </div>
+
+    <!-- Display area for products outside the sidebar -->
+    <div class="product-container" id="productContainer"></div>
+
+    
+
+    <script>
+        function updateQuantity(productName, isIncrement) {
+            $.ajax({
+                type: "POST",
+                url: "/Products?handler=ButtonClick",
+                data: { productName: productName, isIncrement: isIncrement },
+                success: function (response) {
+                    if (response.success) {
+                        const chosenQuantityElem = $('[data-product="' + productName + '"] .chosen-quantity');
+                        chosenQuantityElem.text(response.quantity);
+                    }
+                },
+                error: function () {
+                    console.error("Failed to update quantity.");
+                }
+            });
+        }
+
+        function displayProducts(productList, category) {
+            const productContainer = $('#productContainer');
+            productContainer.empty(); // Clear previous products
+
+            productList.forEach(product => {
+                const productTile = $('<div class="product-tile"></div>');
+                const productImage = $('<img src="' + product.image + '" alt="' + product.name + '">');
+                const productInfo = $('<div class="product-info">' +
+                    '<p>Quantity: <span class="total-quantity">' + product.quantity + '</span></p>' +
+                    '<button class="minus-btn" onclick="updateQuantity(\'' + product.name + '\', false)">-</button>' +
+                    '<span class="chosen-quantity">0</span>' +
+                    '<button class="plus-btn" onclick="updateQuantity(\'' + product.name + '\', true)">+</button>' +
+                    '</div>');
+                const productName = $('<div class="product-name">' + product.name + '</div>');
+
+                productTile.append(productImage, productInfo, productName);
+                productContainer.append(productTile);
+            });
+
+            // Add event listener for the quantity buttons
+            // This is now handled directly in the Razor file
+        }
+
+        // Example product data for each category
+        const products = {
+            grocery: [
+                { name: 'Rice', image: '/static/doha.jpg', quantity: 5 },
+                { name: 'Crystal Oil', image: '/static/oil.png', quantity: 5 },
+                // Add more products as needed
+            ],
+            snacks: [
+                { name: 'Corona Hazelnut Chocolate', image: '/static/corona1.png', quantity: 13 },
+                { name: 'Corona Milk Chocolate', image: '/static/corona2.png', quantity: 13 },
+                { name: 'Corona Dark Chocolate', image: '/static/corona3.png', quantity: 13 },
+            ],
+            drinks: [
+                { name: 'Spiro Spathis Apple', image: '/static/spiro1.png', quantity: 20 },
+                { name: 'Spiro Spathis Lemonade', image: '/static/spiro2.png', quantity: 15 },
+                { name: 'Spiro Spathis Grapes', image: '/static/spiro3.png', quantity: 12 },
+                { name: 'Spiro Spathis Mandarin', image: '/static/spiro4.png', quantity: 18 },
+                { name: 'Spiro Spathis Peach', image: '/static/spiro5.png', quantity: 25 },
+                { name: 'Spiro Spathis Pineapple', image: '/static/spiro6.png', quantity: 30 },
+                { name: 'Spiro Spathis Kiwi', image: '/static/spiro7.png', quantity: 10 },
+                // Add more drinks as needed
+            ],
+            // Add more categories with their respective products
+        };
+
+        $(document).ready(function () {
+            $('.category-link').click(function () {
+                const category = $(this).data('category');
+                displayProducts(products[category], category);
+            });
+        });
+    </script>
+</body>
+</html>

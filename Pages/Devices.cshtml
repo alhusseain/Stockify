@@ -1,0 +1,108 @@
+﻿@page
+@model WebApplication1.Pages.DevicesModel
+@{
+    ViewData["Title"] = "Stockify";
+}
+
+<div class="container mt-4">
+    <div class="jumbotron">
+        <h1 class="display-4">Devices Info can be found here</h1>
+        <p class="lead">Retail Management was never easier!.</p>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col" style="padding: 15px;">Device ID</th>
+                        <th scope="col" style="padding: 15px;">Branch Num</th>
+                        <th scope="col" style="padding: 15px;">Department</th>
+                        <th scope="col" style="padding: 25px;">Last Maintenance</th>
+                        <th scope="col" style="padding: 15px;">Maintenance Date</th>
+                        <th scope="col" style="padding: 15px;">Maintained by</th>
+                        <th scope="col" style="padding: 15px;">Maintainer Id</th>
+                        <th scope="col" style="padding: 15px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#55551</td>
+                        <td>1</td>
+                        <td>Manager</td>
+                        <td>2023-01-15</td>
+                        <td>2023-01-30</td>
+                        <td>Mohamed Salah</td>
+                        <td>#789</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>
+                            <button class="btn btn-primary ml-2" onclick="editRow(this)">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#88522</td>
+                        <td>3</td>
+                        <td>Cashier</td>
+                        <td>2023-02-10</td>
+                        <td>2023-02-25</td>
+                        <td>Emam Ashour</td>
+                        <td>#456</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>
+                            <button class="btn btn-primary ml-2" onclick="editRow(this)">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button class="btn btn-primary" onclick="addNewDevice()">New Device</button>
+    </div>
+</div>
+
+<script>
+    function deleteRow(button) {
+        var row = button.closest('tr');
+        row.remove();
+    }
+
+    function editRow(button) {
+        var row = button.closest('tr');
+        var deviceId = row.cells[0].innerHTML;
+        var branchNum = row.cells[1].innerHTML;
+        var department = row.cells[2].innerHTML;
+        var lastMaintenance = row.cells[3].innerHTML;
+        var maintenanceDate = row.cells[4].innerHTML;
+        var maintainedBy = row.cells[5].innerHTML;
+        var maintainerId = row.cells[6].innerHTML;
+
+        var newDeviceId = prompt('Enter new Device ID:', deviceId);
+        var newBranchNum = prompt('Enter new Branch Num:', branchNum);
+        var newDepartment = prompt('Enter new Department:', department);
+        var newLastMaintenance = prompt('Enter new Last Maintenance (Date):', lastMaintenance);
+        var newMaintenanceDate = prompt('Enter new Maintenance Date:', maintenanceDate);
+        var newMaintainedBy = prompt('Enter new Maintained by:', maintainedBy);
+        var newMaintainerId = prompt('Enter new Maintainer Id:', maintainerId);
+
+        row.cells[0].innerHTML = newDeviceId;
+        row.cells[1].innerHTML = newBranchNum;
+        row.cells[2].innerHTML = newDepartment;
+        row.cells[3].innerHTML = newLastMaintenance;
+        row.cells[4].innerHTML = newMaintenanceDate;
+        row.cells[5].innerHTML = newMaintainedBy;
+        row.cells[6].innerHTML = newMaintainerId;
+    }
+
+    function addNewDevice() {
+        var tbody = document.querySelector('tbody');
+        var newRow = tbody.insertRow();
+        var data = ['3', 'New Device', 'Position', '2023-03-15', '2023-03-30', 'New Maintainer', '123'];
+
+        for (var i = 0; i < data.length; i++) {
+            var cell = newRow.insertCell(i);
+            cell.innerHTML = data[i];
+        }
+
+        var actionsCell = newRow.insertCell(data.length);
+        actionsCell.innerHTML = '<button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>' +
+            '<button class="btn btn-primary ml-2" onclick="editRow(this)">Edit</button>';
+    }
+</script>

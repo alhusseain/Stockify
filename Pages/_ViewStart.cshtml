@@ -1,0 +1,24 @@
+﻿@{
+    var userRole = Context.Request.Cookies["userRole"];
+    if (userRole == "Manager")
+    {
+        Layout = "_Layout";
+
+    }
+    else if (userRole == "Cashier")
+    {
+        Layout = "_CLayout";
+    }
+
+    else if (userRole == "Maintainer")
+    {
+        Layout = "_MLayout";
+    }
+    else if (userRole == "Transporter")
+    {
+        Layout = "_TLayout";
+    }
+
+
+}
+

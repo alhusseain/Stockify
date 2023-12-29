@@ -1,0 +1,115 @@
+﻿@page
+@model WebApplication1.Pages.ordersModel
+@{
+    ViewData["Title"] = "Stockify";
+}
+
+<div class="container">
+    <div class="jumbotron mt-5">
+        <h1 class="display-4">Orders can be found here</h1>
+        <p class="lead">Retail Management was never easier!.</p>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ItemNo</th>
+                        <th scope="col">Product ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total Price</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>#2657851</td>
+                        <td>Spiro Spathis</td>
+                        <td>$8.00</td>
+                        <td>2</td>
+                        <td>$16.00</td>
+                        <td><button class="btn btn-danger" onclick="deleteRow(this)">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>#12345878</td>
+                        <td>Big Chips</td>
+                        <td>$10.00</td>
+                        <td>1</td>
+                        <td>$10.00</td>
+                        <td><button class="btn btn-danger" onclick="deleteRow(this)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        
+        <div class="float-right">
+            <h4>Total Receipt</h4>
+            <div id="totalReceipt"></div>
+        </div>
+
+       
+        <button class="btn btn-danger" onclick="deleteAllRows()">Delete Order</button>
+        <button class="btn btn-success">Confirm Order</button>
+    </div>
+</div>
+
+<script>
+    // Initial total receipt calculation based on existing rows
+    document.addEventListener('DOMContentLoaded', function () {
+        updateTotalReceipt();
+    });
+
+    function deleteRow(button) {
+        // Find the closest 'tr' element and remove it
+        var row = button.closest('tr');
+        var totalCell = row.cells[5]; // Total Price cell
+        var totalAmount = parseFloat(totalCell.innerHTML.replace('$', ''));
+
+        // Remove the row
+        row.remove();
+
+        // Update the total receipt
+        updateTotalReceipt(-totalAmount);
+    }
+
+    function deleteAllRows() {
+        // Remove all rows in the table body
+        var tbody = document.querySelector('tbody');
+        var totalAmount = 0;
+
+        // Calculate the total amount before removing rows
+        tbody.querySelectorAll('tr').forEach(row => {
+            var totalCell = row.cells[5]; // Total Price cell
+            totalAmount += parseFloat(totalCell.innerHTML.replace('$', ''));
+        });
+
+        // Remove all rows
+        tbody.innerHTML = '';
+
+        // Update the total receipt
+        updateTotalReceipt(-totalAmount);
+    }
+
+    function updateTotalReceipt(amount = 0) {
+        // Get the total receipt element
+        var totalReceiptElement = document.getElementById('totalReceipt');
+
+        // Get all rows in the table body
+        var tbody = document.querySelector('tbody');
+        var rows = tbody.querySelectorAll('tr');
+
+        // Calculate the total amount from all rows
+        var newTotal = amount;
+        rows.forEach(row => {
+            var totalCell = row.cells[5]; // Total Price cell
+            newTotal += parseFloat(totalCell.innerHTML.replace('$', ''));
+        });
+
+        // Display the updated total amount
+        totalReceiptElement.innerHTML = '$' + newTotal.toFixed(2);
+    }
+</script>

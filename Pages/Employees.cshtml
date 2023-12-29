@@ -1,0 +1,109 @@
+﻿@page
+@model WebApplication1.Pages.EmployeesModel
+@{
+    ViewData["Title"] = "Stockify";
+}
+
+<div class="container">
+    <div class="jumbotron mt-5">
+        <h1 class="display-4">Employees Info can be found here</h1>
+        <p class="lead">Retail Management was never easier!.</p>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Employee Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Works as</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Branch</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Kareem</td>
+                        <td>Manager</td>
+                        <td>(123) 456-7890</td>
+                        <td>Main Branch</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>
+                            <button class="btn btn-primary ml-2" onclick="editRow(this)">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>John Doe</td>
+                        <td>Cashier</td>
+                        <td>(987) 654-3210</td>
+                        <td>Branch A</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>
+                            <button class="btn btn-primary ml-2" onclick="editRow(this)">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Button to add a new employee -->
+        <button class="btn btn-primary" onclick="addNewEmployee()">New Employee</button>
+    </div>
+</div>
+
+<script>
+    function deleteRow(button) {
+        // Find the closest 'tr' element and remove it
+        var row = button.closest('tr');
+        row.remove();
+    }
+
+    function editRow(button) {
+        
+        var row = button.closest('tr');
+
+        // Get the data from the row
+        var employeeId = row.cells[0].innerHTML;
+        var name = row.cells[1].innerHTML;
+        var worksAs = row.cells[2].innerHTML;
+        var phoneNumber = row.cells[3].innerHTML;
+        var branch = row.cells[4].innerHTML;
+
+       
+        var newEmployeeId = prompt('Enter new Employee Id:', employeeId);
+        var newName = prompt('Enter new Name:', name);
+        var newWorksAs = prompt('Enter new Works as:', worksAs);
+        var newPhoneNumber = prompt('Enter new Phone Number:', phoneNumber);
+        var newBranch = prompt('Enter new Branch:', branch);
+
+       
+        row.cells[0].innerHTML = newEmployeeId;
+        row.cells[1].innerHTML = newName;
+        row.cells[2].innerHTML = newWorksAs;
+        row.cells[3].innerHTML = newPhoneNumber;
+        row.cells[4].innerHTML = newBranch;
+    }
+
+    function addNewEmployee() {
+      
+        var tbody = document.querySelector('tbody');
+
+        var newRow = tbody.insertRow();
+
+        
+        var data = ['3', 'New Employee', 'Position', '(555) 123-4567', 'Branch B'];
+
+        
+        for (var i = 0; i < data.length; i++) {
+            var cell = newRow.insertCell(i);
+            cell.innerHTML = data[i];
+        }
+
+        // Add a cell for the actions buttons
+        var actionsCell = newRow.insertCell(data.length);
+        actionsCell.innerHTML = '<button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>' +
+            '<button class="btn btn-primary ml-2" onclick="editRow(this)">Edit</button>';
+    }
+</script>
