@@ -1,1 +1,1 @@
-# Shopify
+# Stockify
