@@ -94,6 +94,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
 
@@ -101,17 +102,21 @@
             <img src="~/static/logo.png" alt="Logo" height="125" width="125">
         </div>
 
-        <form method="post" asp-page="/home">
+        <form method="post" asp-page="/signin">
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" name="username" class="form-control" required>
+                <input type="text" name="username" class="form-control" required asp-for="@Model.Username">
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" name="password" class="form-control" required>
+                <input type="password" name="password" class="form-control" required asp-for="@Model.Password">
             </div>
             <button type="submit" class="btn btn-signin">Sign In</button>
         </form>
+
+        <p class="text-center mt-3">
+            Don't have an account? <a href="/SignUp">Sign Up</a>
+        </p>
 
         <script>
             var userRole = Context.Request.Cookies["userRole"];

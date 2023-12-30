@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Shopify\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
+    "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Stockify\\WebApplication1.csproj": {}
   },
   "projects": {
-    "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Shopify\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
+    "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Stockify\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Shopify\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Stockify\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Shopify\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Stockify\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\karee\\.nuget\\packages\\",
-        "outputPath": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Shopify\\WebApplication1\\WebApplication1\\obj\\",
+        "outputPath": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Stockify\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\karee\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
