@@ -22,6 +22,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Sample data -->
                     <tr>
                         <td>1</td>
                         <td>Kareem</td>
@@ -48,12 +49,55 @@
             </table>
         </div>
 
-        <!-- Button to add a new employee -->
-        <button class="btn btn-primary" onclick="addNewEmployee()">New Employee</button>
+        <!-- Button to open the modal -->
+        <button class="btn btn-primary" data-toggle="modal" data-target="#AddEditEmployee">New Employee</button>
+    </div>
+</div>
+
+<div class="modal fade" id="AddEditEmployee" tabindex="-1" role="dialog" aria-labelledby="AddEditEmployeeLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="AddEditEmployeeLabel">Employee Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form to Add or Edit an employee -->
+                <form action="/save_employee" method="POST" id="employeeForm">
+                    <input type="hidden" id="employeeIdHidden" name="employeeIdHidden">
+
+                    <div class="form-group">
+                        <label for="employeeId">Employee ID:</label>
+                        <input class="form-control" type="text" id="employeeId" name="employeeId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input class="form-control" type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="worksAs">Works as:</label>
+                        <input class="form-control" type="text" id="worksAs" name="worksAs" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number:</label>
+                        <input class="form-control" type="tel" id="phoneNumber" name="phoneNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="branch">Branch:</label>
+                        <input class="form-control" type="text" id="branch" name="branch" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="saveEmployee()">Save Employee</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
+    var editingRow;
+
     function deleteRow(button) {
         // Find the closest 'tr' element and remove it
         var row = button.closest('tr');
@@ -61,49 +105,72 @@
     }
 
     function editRow(button) {
-        
-        var row = button.closest('tr');
+        editingRow = button.closest('tr');
 
         // Get the data from the row
-        var employeeId = row.cells[0].innerHTML;
-        var name = row.cells[1].innerHTML;
-        var worksAs = row.cells[2].innerHTML;
-        var phoneNumber = row.cells[3].innerHTML;
-        var branch = row.cells[4].innerHTML;
+        var employeeId = editingRow.cells[0].innerHTML;
+        var name = editingRow.cells[1].innerHTML;
+        var worksAs = editingRow.cells[2].innerHTML;
+        var phoneNumber = editingRow.cells[3].innerHTML;
+        var branch = editingRow.cells[4].innerHTML;
 
-       
-        var newEmployeeId = prompt('Enter new Employee Id:', employeeId);
-        var newName = prompt('Enter new Name:', name);
-        var newWorksAs = prompt('Enter new Works as:', worksAs);
-        var newPhoneNumber = prompt('Enter new Phone Number:', phoneNumber);
-        var newBranch = prompt('Enter new Branch:', branch);
+        // Set the values in the modal form
+        document.getElementById('employeeIdHidden').value = employeeId;
+        document.getElementById('employeeId').value = employeeId;
+        document.getElementById('name').value = name;
+        document.getElementById('worksAs').value = worksAs;
+        document.getElementById('phoneNumber').value = phoneNumber;
+        document.getElementById('branch').value = branch;
 
-       
-        row.cells[0].innerHTML = newEmployeeId;
-        row.cells[1].innerHTML = newName;
-        row.cells[2].innerHTML = newWorksAs;
-        row.cells[3].innerHTML = newPhoneNumber;
-        row.cells[4].innerHTML = newBranch;
+        // Open the modal
+        $('#AddEditEmployee').modal('show');
     }
 
-    function addNewEmployee() {
-      
-        var tbody = document.querySelector('tbody');
+    function resetForm() {
+        document.getElementById('employeeIdHidden').value = '';
+        document.getElementById('employeeId').value = '';
+        document.getElementById('name').value = '';
+        document.getElementById('worksAs').value = '';
+        document.getElementById('phoneNumber').value = '';
+        document.getElementById('branch').value = '';
+    }
 
-        var newRow = tbody.insertRow();
+    function saveEmployee() {
+        // Retrieve input values from the form
+        var employeeId = document.getElementById('employeeId').value;
+        var name = document.getElementById('name').value;
+        var worksAs = document.getElementById('worksAs').value;
+        var phoneNumber = document.getElementById('phoneNumber').value;
+        var branch = document.getElementById('branch').value;
 
-        
-        var data = ['3', 'New Employee', 'Position', '(555) 123-4567', 'Branch B'];
+        if (editingRow) {
+            // Update the existing row if in edit mode
+            editingRow.cells[0].innerHTML = employeeId;
+            editingRow.cells[1].innerHTML = name;
+            editingRow.cells[2].innerHTML = worksAs;
+            editingRow.cells[3].innerHTML = phoneNumber;
+            editingRow.cells[4].innerHTML = branch;
+            editingRow = null; // Reset editing mode
+        } else {
+            // Create a new row if not in edit mode
+            var tbody = document.querySelector('tbody');
+            var newRow = tbody.insertRow();
 
-        
-        for (var i = 0; i < data.length; i++) {
-            var cell = newRow.insertCell(i);
-            cell.innerHTML = data[i];
+            var data = [employeeId, name, worksAs, phoneNumber, branch];
+            for (var i = 0; i < data.length; i++) {
+                var cell = newRow.insertCell(i);
+                cell.innerHTML = data[i];
+            }
+
+            var actionsCell = newRow.insertCell(data.length);
+            actionsCell.innerHTML = '<button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>' +
+                '<button class="btn btn-primary ml-2" onclick="editRow(this)">Edit</button>';
+            resetForm()
         }
 
-        // Add a cell for the actions buttons
-        var actionsCell = newRow.insertCell(data.length);
-        actionsCell.innerHTML = '<button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>' +
-            '<button class="btn btn-primary ml-2" onclick="editRow(this)">Edit</button>';
+        // Close the modal
+        $('#AddEditEmployee').modal('hide');
     }
 </script>
+
+
