@@ -31,3 +31,36 @@ D:\.ZC\ZC y2 s1\CSAI 202\Shopify\WebApplication1\WebApplication1\obj\Debug\net7.
 D:\.ZC\ZC y2 s1\CSAI 202\Shopify\WebApplication1\WebApplication1\obj\Debug\net7.0\scopedcss\Pages\Shared\_CLayout.cshtml.rz.scp.css
 D:\.ZC\ZC y2 s1\CSAI 202\Shopify\WebApplication1\WebApplication1\obj\Debug\net7.0\scopedcss\Pages\Shared\_MLayout.cshtml.rz.scp.css
 D:\.ZC\ZC y2 s1\CSAI 202\Shopify\WebApplication1\WebApplication1\obj\Debug\net7.0\scopedcss\Pages\Shared\_TLayout.cshtml.rz.scp.css
+H:\Projects\Stockify\Stockify-1\bin\Debug\net7.0\appsettings.Development.json
+H:\Projects\Stockify\Stockify-1\bin\Debug\net7.0\appsettings.json
+H:\Projects\Stockify\Stockify-1\bin\Debug\net7.0\WebApplication1.staticwebassets.runtime.json
+H:\Projects\Stockify\Stockify-1\bin\Debug\net7.0\WebApplication1.exe
+H:\Projects\Stockify\Stockify-1\bin\Debug\net7.0\WebApplication1.deps.json
+H:\Projects\Stockify\Stockify-1\bin\Debug\net7.0\WebApplication1.runtimeconfig.json
+H:\Projects\Stockify\Stockify-1\bin\Debug\net7.0\WebApplication1.dll
+H:\Projects\Stockify\Stockify-1\bin\Debug\net7.0\WebApplication1.pdb
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\WebApplication1.GeneratedMSBuildEditorConfig.editorconfig
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\WebApplication1.AssemblyInfoInputs.cache
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\WebApplication1.AssemblyInfo.cs
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\WebApplication1.csproj.CoreCompileInputs.cache
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\WebApplication1.MvcApplicationPartsAssemblyInfo.cache
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\WebApplication1.RazorAssemblyInfo.cache
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\WebApplication1.RazorAssemblyInfo.cs
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\staticwebassets\msbuild.WebApplication1.Microsoft.AspNetCore.StaticWebAssets.props
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\staticwebassets\msbuild.build.WebApplication1.props
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.WebApplication1.props
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.WebApplication1.props
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\staticwebassets.pack.json
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\staticwebassets.build.json
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\staticwebassets.development.json
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\scopedcss\Pages\Shared\_CLayout.cshtml.rz.scp.css
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\scopedcss\Pages\Shared\_MLayout.cshtml.rz.scp.css
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\scopedcss\Pages\Shared\_TLayout.cshtml.rz.scp.css
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\scopedcss\bundle\WebApplication1.styles.css
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\scopedcss\projectbundle\WebApplication1.bundle.scp.css
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\WebApplication1.dll
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\refint\WebApplication1.dll
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\WebApplication1.pdb
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\WebApplication1.genruntimeconfig.cache
+H:\Projects\Stockify\Stockify-1\obj\Debug\net7.0\ref\WebApplication1.dll
