@@ -15,7 +15,7 @@ namespace WebApplication1.Pages
         {
             try
             {
-                string connecectionstring = "Server=DESKTOP-9IHIA03;Database=StockifyUpdated;Integrated Security=True;Encrypt=True;";
+                string connecectionstring = "Server=DESKTOP-9IHIA03;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
 
                 using (SqlConnection connection = new SqlConnection(connecectionstring))
                 {
