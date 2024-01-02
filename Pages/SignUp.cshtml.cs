@@ -29,7 +29,7 @@ public class SignUpModel : PageModel
     {
         if (ModelState.IsValid)
         {
-            string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=KAREEM";
+            string connectionString = "Server=DESKTOP-9IHIA03;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
             
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
