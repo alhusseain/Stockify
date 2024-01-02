@@ -20,15 +20,14 @@
                         <th scope="col">Works as</th>
                         <th scope="col">Phone Number</th>
                         <th scope="col">Branch</th>
+                        <th scope="col" style="text-align=center">Action</th>
                         
                     </tr>
                 </thead>
                 <tbody>
 
                     @foreach(var item in Model.Employee)
-            {
-
-            
+            {            
                     <tr>
                         <td>@item.EmployeeID</td>
                         <td>@item.Fname</td>
@@ -36,9 +35,8 @@
                         <td>@item.Phonenumber</td>
                         <td>@item.Branch_ID</td>
                         <td>
-                            <a class="btn btn-primary btn-sm" href="/employee/Edit?id=@item.EmployeeID">Edit</a>
-                            <a class="btn btn-primary btn-sm" href="/employee/Delete?id=@item.EmployeeID">Delete</a>
-
+                            <button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>
+                            <button class="btn btn-primary ml-2" onclick="editRow(this)">Edit</button>
                         </td>
                     </tr>
             }
@@ -167,6 +165,8 @@
 
         // Close the modal
         $('#AddEditEmployee').modal('hide');
-    }
-</script>
 
+
+   
+    }
+</script>
