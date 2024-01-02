@@ -15,7 +15,7 @@ namespace WebApplication1.Pages
         {
             try
             {
-                string connecectionstring = "Data Source=Victusx15\\DATABASE_SERVER;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
+                string connecectionstring = "Server=DESKTOP-9IHIA03;Database=StockifyUpdated;Integrated Security=True;Encrypt=True;";
 
                 using (SqlConnection connection = new SqlConnection(connecectionstring))
                 {
