@@ -10,16 +10,16 @@ namespace WebApplication1.Pages
     [BindProperties(SupportsGet = true)]
     public class EmployeesModel : PageModel
     {
-        private readonly ILogger<EmployeesModel> logger;
-        private readonly DB db;
+        private readonly ILogger<EmployeesModel> _logger;
+        private DB db;
 
-        public DataTable EmployeeDataTable { get; set; }
+        public DataTable EmployeeDataTable{ get; set; } =new DataTable("Employee");
         public Employee selected_emp { get; set; }
 
-        public EmployeesModel(ILogger<EmployeesModel> logger, DB db)
+        public EmployeesModel(ILogger<EmployeesModel> logger)
         {
-            this.logger = logger;
-            this.db = db;
+            _logger = logger;
+            db = new DB();
         }
 
         public void OnGet()

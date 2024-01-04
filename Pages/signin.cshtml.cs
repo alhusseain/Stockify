@@ -26,7 +26,7 @@ namespace WebApplication1.Pages
         {
             if (ModelState.IsValid)
             {
-                string connectionString = "Server=Victusx15\\DATABASE_SERVER;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
+                string connectionString = "Server=DESKTOP-9IHIA03;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
