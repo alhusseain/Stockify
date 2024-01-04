@@ -63,6 +63,9 @@
     <div class="container">
         <h2 class="text-center">Sign Up</h2>
         <form method="post" asp-page="/SignUp">
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" name="username" class="form-control" required asp-for="@Model.Username">
@@ -73,14 +76,10 @@
                 <input type="password" name="password" class="form-control" required asp-for="@Model.Password">
             </div>
 
-            <div class="form-group">
-                <label for="text">Role</label>
-                <input type="text" class="form-control" required asp-for="@Model.Role">
-            </div>
 
             <div class="form-group">
-                <label for="text">ID</label>
-                <input type="text" class="form-control" required asp-for="@Model.ID">
+            <label for="text">ID</label>
+            <input type="text" class="form-control" required asp-for="@Model.ID">
             </div>
             
             <button type="submit" class="btn btn-signup">Sign Up</button>

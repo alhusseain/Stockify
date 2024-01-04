@@ -15,9 +15,6 @@ public class SignUpModel : PageModel
     public string Password { get; set; }
 
     [BindProperty]
-    public string Role { get; set; }
-
-    [BindProperty]
     public string ID { get; set; }
 
     public SignUpModel(IConfiguration configuration)
@@ -26,38 +23,66 @@ public class SignUpModel : PageModel
     }
 
     public IActionResult OnPost()
-    {
-        if (ModelState.IsValid)
         {
-            string connectionString = "Server=DESKTOP-9IHIA03;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
-            
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
-
-                string hashedPassword = HashPassword(Password);
-
-                string insertQuery = "INSERT INTO Signups (Username, Password, Role, Employee_id) VALUES (@Username, @Password, @Role, @ID)";
-
-                using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                if (ModelState.IsValid)
                 {
-                    command.Parameters.AddWithValue("@Username", Username);
-                    command.Parameters.AddWithValue("@Password", hashedPassword);
-                    command.Parameters.AddWithValue("@Role", Role);
-                    command.Parameters.AddWithValue("@ID", ID);
+                    string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
 
-                    int rowsAffected = command.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
+                    using (SqlConnection connection = new SqlConnection(connectionString))
                     {
-                        return RedirectToPage("/SignIn");
+                        connection.Open();
+
+                        if (IsIdAlreadyExists(connection, ID))
+                        {
+                            ModelState.AddModelError("ID", "Error with ID. This ID already exists.");
+                            return Page();
+                        }
+
+                        string hashedPassword = HashPassword(Password);
+
+                        string insertQuery = "INSERT INTO Signups (Username, Password, Employee_id) VALUES (@Username, @Password, @ID)";
+
+                        using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                        {
+                            command.Parameters.AddWithValue("@Username", Username);
+                            command.Parameters.AddWithValue("@Password", hashedPassword);
+                            command.Parameters.AddWithValue("@ID", ID);
+
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                return RedirectToPage("/SignIn");
+                            }
+                        }
                     }
                 }
             }
+            catch (SqlException)
+            {
+                ModelState.AddModelError(string.Empty, "An error occurred while processing your request. Please try again.");
+            }
+
+            return Page();
         }
 
-        return Page();
+    private bool IsIdAlreadyExists(SqlConnection connection, string id)
+    {
+        string checkQuery = "SELECT COUNT(*) FROM Signups WHERE Employee_id = @ID";
+        
+        using (SqlCommand command = new SqlCommand(checkQuery, connection))
+        {
+            command.Parameters.AddWithValue("@ID", id);
+
+            int count = (int)command.ExecuteScalar();
+            
+            return count > 0;
+        }
     }
+    
+    
 
     private string HashPassword(string password)
     {
