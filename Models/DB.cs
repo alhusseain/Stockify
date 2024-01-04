@@ -5,45 +5,37 @@ using System.Runtime.Intrinsics.X86;
 namespace WebApplication1.Models
 {
     public class DB
+{
+    private string connectionString = "Server=DESKTOP-9IHIA03;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
+    private SqlConnection con = new SqlConnection();
+
+    public DB()
     {
-        private string connectionString = "Server=DESKTOP-9IHIA03;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
-        private SqlConnection con = new SqlConnection();
+        con.ConnectionString = connectionString;
+    }
 
-        public DB()
+    public DataTable ReadTable(string table)
+    {
+        DataTable dt = new DataTable();
+        string query = "select EmployeeId ,Fname, RoleName ,PhoneNumber, Branch_ID from Employee";
+        SqlCommand cmd = new SqlCommand(query, con);
+
+        try
         {
-            con.ConnectionString = connectionString;
+            con.Open();
+            dt.Load(cmd.ExecuteReader());
 
         }
-
-        public DataTable ReadEmployeeData()
+        catch (SqlException err)
         {
-            DataTable dt = new DataTable();
-
-            try
-            {
-                string connecectionstring = "Server=DESKTOP-9IHIA03;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
-
-                using (SqlConnection connection = new SqlConnection(connecectionstring))
-                {
-                    connection.Open();
-                    string sqlQuery = "SELECT ";
-
-                    using (SqlCommand command = new SqlCommand(sqlQuery, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            dt.Load(reader);
-                        }
-                    }
-                }
-            }
-            catch (SqlException err)
-            {
-                Console.WriteLine(err.Message);
-            }
-
-            return dt;
+            Console.WriteLine(err.Message);
         }
+        finally
+        {
+            con.Close();
+        }
+        return dt;
+    }
 
 
         public string AddEmployee(Employee emp)

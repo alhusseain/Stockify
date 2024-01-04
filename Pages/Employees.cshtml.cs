@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Data;
 using WebApplication1.Models;
@@ -11,21 +10,19 @@ namespace WebApplication1.Pages
     public class EmployeesModel : PageModel
     {
         private readonly ILogger<EmployeesModel> _logger;
-        private DB db;
-
-        public DataTable EmployeeDataTable{ get; set; } =new DataTable("Employee");
+        public DB db { get; set; }
+        public DataTable EmployeeDataTable { get; set; }
         public Employee selected_emp { get; set; }
-
-        public EmployeesModel(ILogger<EmployeesModel> logger)
+        public EmployeesModel(ILogger<EmployeesModel> logger, DB db)
         {
             _logger = logger;
-            db = new DB();
+            this.db = db;
         }
 
         public void OnGet()
         {
-            EmployeeDataTable = db.ReadEmployeeData();
-        }
+            EmployeeDataTable = db.ReadTable("Employee");
+        }
 
         public IActionResult OnPostDelete(string employeeId)
         {
