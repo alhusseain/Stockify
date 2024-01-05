@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Configuration;
-using System;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 
