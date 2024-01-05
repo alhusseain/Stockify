@@ -6,10 +6,12 @@ namespace WebApplication1.Pages
 {
     // WebApplication1.Pages.productsModel.cshtml.cs
 
-   
+  
 
     public class ProductsModel : PageModel
     {
+        [BindProperty]
+        public required string Role_products { get; set; }
         // Example product data for each category
         private Dictionary<string, List<Product>> products = new Dictionary<string, List<Product>>()
     {
@@ -48,6 +50,7 @@ namespace WebApplication1.Pages
         public void OnGet()
         {
             // Default category to display initially
+
             string defaultCategory = "grocery";
             ViewData["DefaultCategory"] = defaultCategory;
             DisplayProducts(defaultCategory);

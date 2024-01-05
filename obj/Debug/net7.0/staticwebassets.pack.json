@@ -1,335 +1,335 @@
 {
   "Files": [
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\WebApplication1.bundle.scp.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\WebApplication1.bundle.scp.css",
       "PackagePath": "staticwebassets\\WebApplication1.bundle.scp.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\css\\site.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\favicon.ico",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\js\\site.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\Arma.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\Arma.png",
       "PackagePath": "staticwebassets\\static\\Arma.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\Shop.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\Shop.png",
       "PackagePath": "staticwebassets\\static\\Shop.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\Stock.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\Stock.png",
       "PackagePath": "staticwebassets\\static\\Stock.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\aldoha.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\aldoha.png",
       "PackagePath": "staticwebassets\\static\\aldoha.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\blogo.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\blogo.png",
       "PackagePath": "staticwebassets\\static\\blogo.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\corona.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\corona.png",
       "PackagePath": "staticwebassets\\static\\corona.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\corona1.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\corona1.png",
       "PackagePath": "staticwebassets\\static\\corona1.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\corona2.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\corona2.png",
       "PackagePath": "staticwebassets\\static\\corona2.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\corona3.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\corona3.png",
       "PackagePath": "staticwebassets\\static\\corona3.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\doha.jpg",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\doha.jpg",
       "PackagePath": "staticwebassets\\static\\doha.jpg"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\glogo.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\glogo.png",
       "PackagePath": "staticwebassets\\static\\glogo.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\logo.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\logo.png",
       "PackagePath": "staticwebassets\\static\\logo.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\oil.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\oil.png",
       "PackagePath": "staticwebassets\\static\\oil.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\spiro.jpg",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\spiro.jpg",
       "PackagePath": "staticwebassets\\static\\spiro.jpg"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\spiro1.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\spiro1.png",
       "PackagePath": "staticwebassets\\static\\spiro1.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\spiro2.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\spiro2.png",
       "PackagePath": "staticwebassets\\static\\spiro2.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\spiro3.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\spiro3.png",
       "PackagePath": "staticwebassets\\static\\spiro3.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\spiro4.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\spiro4.png",
       "PackagePath": "staticwebassets\\static\\spiro4.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\spiro5.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\spiro5.png",
       "PackagePath": "staticwebassets\\static\\spiro5.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\spiro6.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\spiro6.png",
       "PackagePath": "staticwebassets\\static\\spiro6.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\spiro7.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\spiro7.png",
       "PackagePath": "staticwebassets\\static\\spiro7.png"
     },
     {
-      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\تصميم بدون عنوان.png",
+      "Id": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\wwwroot\\static\\تصميم بدون عنوان.png",
       "PackagePath": "staticwebassets\\static\\تصميم بدون عنوان.png"
     },
     {
