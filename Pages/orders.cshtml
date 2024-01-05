@@ -9,7 +9,7 @@
         <h1 class="display-4">Orders can be found here</h1>
         <p class="lead">Retail Management was never easier!.</p>
 
-        <div class="table-responsive">
+        <div id ="printableArea" class="table-responsive" >
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
@@ -23,24 +23,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>#2657851</td>
-                        <td>Spiro Spathis</td>
-                        <td>$8.00</td>
-                        <td>2</td>
-                        <td>$16.00</td>
-                        <td><button class="btn btn-danger" onclick="deleteRow(this)">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>#12345878</td>
-                        <td>Big Chips</td>
-                        <td>$10.00</td>
-                        <td>1</td>
-                        <td>$10.00</td>
-                        <td><button class="btn btn-danger" onclick="deleteRow(this)">Delete</button></td>
-                    </tr>
+                    @{ int counter = 1; }
+                    @foreach (var item in Model.orderinfoo)
+                    {
+                        <tr>
+                            <td>@counter</td>
+                            <td>@item.productID</td>
+                            <td>@item.name</td>
+                            <td>@item.price EGP</td>
+                            <td>@item.quantity</td>
+                            <td>@(item.quantity * item.price) EGP</td>
+                            <td>
+                                <button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>
+                            </td>
+                        </tr>
+
+                        counter++;
+                    }
                 </tbody>
             </table>
         </div>
@@ -54,6 +53,7 @@
        
         <button class="btn btn-danger" onclick="deleteAllRows()">Delete Order</button>
         <button class="btn btn-success">Confirm Order</button>
+        <button class="btn btn-primary" href="javascript:void(0);" onclick="printPageArea('printableArea')">Print</button>
     </div>
 </div>
 
@@ -112,4 +112,14 @@
         // Display the updated total amount
         totalReceiptElement.innerHTML = '$' + newTotal.toFixed(2);
     }
+
+    function printPageArea(areaID) {
+      var printContent = document.getElementById(areaID).innerHTML;
+      var originalContent = document.body.innerHTML;
+      document.body.innerHTML = printContent;
+      window.print();
+      document.body.innerHTML = originalContent;
+        }
+
+
 </script>
