@@ -14,8 +14,6 @@ namespace WebApplication1.Pages
     public class EmployeesModel : PageModel
     {
 
-
-
         private readonly ILogger<EmployeesModel> _logger;
         public DB db { get; set; }
         public DataTable EmployeeDataTable { get; set; }
