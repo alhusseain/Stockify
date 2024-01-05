@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+LCq+4E20ueV12RzFocxT0iy5NHX627lunP33adeG12HUsZahVAs/Q8fqab/eFC4omGFEac1OGRU+9qBx0UQVQ==",
+  "dgSpecHash": "Z3Ndvodvi8nzVdyUP/Lg1n43vF/X5ed27Oi5km0f7pD4DXHylEIzFRvOi+bz6D4S76EVm1m1H4U9mBoh637Aww==",
   "success": true,
-  "projectFilePath": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oahme\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\oahme\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
