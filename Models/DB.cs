@@ -151,28 +151,5 @@ namespace WebApplication1.Models
             return employee;
 
         }
-
-        public bool AdminExists(string ID)
-        {
-            string query = $"SELECT COUNT(*) FROM Employee WHERE EmployeeID = '{ID}'";
-            SqlCommand cmd = new SqlCommand(query, con);
-
-            try
-            {
-                con.Open();
-                int count = (int)cmd.ExecuteScalar();
-                return count > 0;
-            }
-            catch (SqlException err)
-            {
-                Console.WriteLine(err.Message);
-                return false;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
     }
 }

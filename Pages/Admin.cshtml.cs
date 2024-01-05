@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Data;
 using WebApplication1.Models;
 using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using System.Xml.Linq;
 
 namespace WebApplication1.Pages
 {
@@ -40,43 +43,7 @@ namespace WebApplication1.Pages
 
         [BindProperty]
         public string PhoneNumber { get; set; }
-        [BindProperty]
-        public string Email { get; set; }
 
-
-
-        public IActionResult OnPost()
-        {
-
-            string connection = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
-            SqlConnection con = new SqlConnection(connection);
-            string query = "insert into Employee(Fname, EmployeeID, RoleName, PhoneNumber, Email) values(@Fname, @EmployeeID,@RoleName,@PhoneNumber,@Email)";
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@Fname", Fname);
-            cmd.Parameters.AddWithValue("@EmployeeID", EmployeeID);
-            cmd.Parameters.AddWithValue("@RoleName", "Admin");
-            cmd.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
-            cmd.Parameters.AddWithValue("@Email", Email);
-            Console.Write(query);
-            string res = "";
-            try
-            {
-                con.Open();
-                res = cmd.ExecuteNonQuery().ToString();
-
-            }
-            catch (SqlException err)
-            {
-                res = err.Message;
-            }
-            finally
-            {
-
-                con.Close();
-            }
-            return RedirectToPage("/Admin");
-
-        }
     }
 }
 
