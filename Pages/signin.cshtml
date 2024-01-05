@@ -112,17 +112,21 @@
             <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" name="password" class="form-control" required asp-for="@Model.Password">
+                <p class="text-Left mt-3">
+                    Forgot your password? <a href="/ChangePassword">Reset</a>
+                </p>
             </div>
             <button type="submit" class="btn btn-signin">Sign In</button>
         </form>
 
+      
         <p class="text-center mt-3">
-            Don't have an account? <a href="/SignUp">Sign Up</a>
+            Don't have an account? <a href="/SignUp" class="btn btn-success btn-sm">Sign Up</a>
+
         </p>
 
-        <p class="text-center mt-3">
-           Forgot your password? <a href="/ChangePassword">Reset</a>
-        </p>
+
+       
 
 
         <script>
