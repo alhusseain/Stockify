@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\WebApplication1.csproj": {}
+    "C:\\Users\\fires\\Stockify\\Stockify\\WebApplication1.csproj": {}
   },
   "projects": {
-    "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\WebApplication1.csproj": {
+    "C:\\Users\\fires\\Stockify\\Stockify\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\WebApplication1.csproj",
+        "projectUniqueName": "C:\\Users\\fires\\Stockify\\Stockify\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\WebApplication1.csproj",
-        "packagesPath": "C:\\Users\\oahme\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\obj\\",
+        "projectPath": "C:\\Users\\fires\\Stockify\\Stockify\\WebApplication1.csproj",
+        "packagesPath": "C:\\Users\\fires\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fires\\Stockify\\Stockify\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\oahme\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\fires\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"

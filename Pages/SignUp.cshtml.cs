@@ -45,7 +45,7 @@ public class SignUpModel : PageModel
                     return Page();
                 }
 
-                string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
+                string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=DESKTOP-9IHIA03";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {

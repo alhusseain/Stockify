@@ -53,7 +53,7 @@ namespace WebApplication1.Pages
         public IActionResult OnPostInsert()
         {
 
-            string connection = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
+            string connection = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=DESKTOP-9IHIA03";
             SqlConnection con = new SqlConnection(connection);
             string query = "insert into Employee(Fname, EmployeeID, RoleName, PhoneNumber, Branch_ID) values(@Fname, @EmployeeID,@RoleName,@PhoneNumber,@Branch_ID)";
             SqlCommand cmd = new SqlCommand(query, con);
