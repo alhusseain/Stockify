@@ -58,7 +58,7 @@ public class ChangePasswordModel : PageModel
 
                     if (UpdatePassword(connection, Username, hashedNewPassword))
                     {
-                        return RedirectToPage("/SignIn"); // Redirect to sign-in page after successful password change
+                        return RedirectToPage("/SignIn"); 
                     }
                 }
             }
@@ -73,7 +73,7 @@ public class ChangePasswordModel : PageModel
 
     private bool IsUserValid(SqlConnection connection, string username, string answer, string question)
         {
-            // Query for retrieving the answer from the database
+            // Query for answer 
             string getAnswerQuery = "SELECT Answer FROM Signups WHERE Username = @Username";
 
             using (SqlCommand answerCommand = new SqlCommand(getAnswerQuery, connection))
@@ -83,13 +83,11 @@ public class ChangePasswordModel : PageModel
 
                 if (result1 != null)
                 {
-                    // Retrieve the answer from the database
                     string storedAnswer = result1.ToString();
 
-                    // Check if the provided answer matches the stored answer
                     if (storedAnswer == answer)
                     {
-                        // Query for retrieving the question from the database
+                        // Query for answer
                         string getQuestionQuery = "SELECT Question FROM Signups WHERE Username = @Username";
 
                         using (SqlCommand questionCommand = new SqlCommand(getQuestionQuery, connection))
@@ -99,17 +97,15 @@ public class ChangePasswordModel : PageModel
 
                             if (result2 != null)
                             {
-                                // Retrieve the question from the database
                                 string storedQuestion = result2.ToString();
 
-                                // Check if the provided question matches the stored question
                                 return storedQuestion == question;
                             }
                         }
                     }
                 }
 
-                return false; // Username not found in the database or incorrect answer
+                return false; 
             }
         }
 
