@@ -11,12 +11,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            margin-top: 70px;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand img {
+            filter: brightness(0) invert(1);
+        }
+
+        .modal-header {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .modal-footer {
+            background-color: #f8f9fa;
+        }
+
+        /* Table styles */
+        .table th, .table td {
+            text-align: center;
+        }
+
+        .table thead th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
         <!-- Brand/logo -->
-        <a class="navbar-brand" asp-page="/home">
+        <a class="navbar-brand" asp-page="/Admin">
             <img src="~/static/blogo.png" alt="Logo" height="50" width="50">
         </a>
 
@@ -31,14 +66,135 @@
         </div>
     </nav>
 
+    <!-- Admins Table -->
+    <div class="container mt-5">
+        <h2 class="text-primary mb-4">Admins Table</h2>
+        <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#adminModal">
+            Add Admin
+        </button>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Admin 1</td>
+                    <td>admin1@example.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Admin 2</td>
+                    <td>admin2@example.com</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
 
+        <!-- Admins Modal -->
+        <div class="modal fade" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="adminModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="adminModalLabel">Add Admin</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Add Admin Form Content -->
+                        <form>
+                            <div class="form-group">
+                                <label for="adminName">Name</label>
+                                <input type="text" class="form-control" id="adminName" placeholder="Enter name">
+                            </div>
+                            <div class="form-group">
+                                <label for="adminEmail">Email</label>
+                                <input type="email" class="form-control" id="adminEmail" placeholder="Enter email">
+                            </div>
+                            <!-- Add more form fields as needed -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Managers Table -->
+    <div class="container mt-5">
+        <h2 class="text-success mb-4">Managers Table</h2>
+        <button type="button" class="btn btn-success mb-3" data-toggle="modal" data-target="#managerModal">
+            Add Manager
+        </button>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Manager 1</td>
+                    <td>manager1@example.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Manager 2</td>
+                    <td>manager2@example.com</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
 
-    
+        <!-- Managers Modal -->
+        <div class="modal fade" id="managerModal" tabindex="-1" role="dialog" aria-labelledby="managerModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="managerModalLabel">Add Manager</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Add Manager Form Content -->
+                        <form>
+                            <div class="form-group">
+                                <label for="managerName">Name</label>
+                                <input type="text" class="form-control" id="managerName" placeholder="Enter name">
+                            </div>
+                            <div class="form-group">
+                                <label for="managerEmail">Email</label>
+                                <input type="email" class="form-control" id="managerEmail" placeholder="Enter email">
+                            </div>
+                            <!-- Add more form fields as needed -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap JavaScript dependencies -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Additional scripts for each modal, if needed -->
 </body>
 </html>

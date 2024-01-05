@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "y+kW5q572Pr/v8l4lsosdHWAeZflHEnMawsTx7+maQY=",
+  "Hash": "/20Nu8cc0aVSpHd6da0yb6HRfO9kxDOyUfA6poW0UWE=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\static\\Arma.png"
+    },
+    {
+      "Identity": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Stockify\\latest\\wwwroot\\static\\blogo.png",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Stockify\\latest\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "static/blogo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\static\\blogo.png"
     },
     {
       "Identity": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Stockify\\latest\\wwwroot\\static\\corona.png",
