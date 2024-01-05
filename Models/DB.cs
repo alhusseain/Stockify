@@ -6,7 +6,7 @@ namespace WebApplication1.Models
 {
     public class DB
 {
-    private string connectionString = "Server=Victusx15\\DATABASE_SERVER;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
+    private string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
     private SqlConnection con = new SqlConnection();
 
     public DB()

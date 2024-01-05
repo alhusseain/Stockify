@@ -59,31 +59,31 @@
             </div>
             <div class="modal-body">
                 <!-- Form to Add or Edit an employee -->
-                <form method="post" id="employeeForm">
+                <form method="post" asp-page-handler="Insert" id="employeeForm">
                     <input type="hidden" id="employeeIdHidden" name="employeeIdHidden">
 
                     <div class="form-group">
                         <label for="employeeId">Employee ID:</label>
-                        <input class="form-control" type="text" id="employeeId" asp-for="@Model.employeeId" required>
+                        <input class="form-control" type="text" id="employeeId" asp-for="@Model.EmployeeID" required>
                     </div>
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input class="form-control" asp-for="@Model.name" id="name" required>
+                        <input class="form-control" asp-for="@Model.Fname" id="name" required>
                     </div>
                     <div class="form-group">
                         <label for="worksAs">Works as:</label>
-                        <input class="form-control" type="text" id="worksAs" asp-for="@Model.worksAs" required>
+                        <input class="form-control" type="tgiext" id="worksAs" asp-for="@Model.RoleName" required>
                     </div>
                     <div class="form-group">
                         <label for="phoneNumber">Phone Number:</label>
-                        <input class="form-control" type="tel" id="phoneNumber" asp-for="@Model.phoneNumber" required>
+                        <input class="form-control" type="tel" id="phoneNumber" asp-for="@Model.PhoneNumber" required>
                     </div>
                     <div class="form-group">
                         <label for="branch">Branch:</label>
-                        <input class="form-control" type="text" id="branch" asp-for="@Model.branch" required>
+                        <input class="form-control" type="text" id="branch" asp-for="@Model.Branch_ID" required>
                     </div>
                     @* <input type="submit" onclick="saveEmployee()"> *@
-                    <button type="submit" class="btn btn-signin" onclick="saveEmployee()">ay kalam</button>
+                    <button type="submit" class="btn btn-signin" onclick="saveEmployee()">ADD</button>
 
                 </form>
             </div>
