@@ -6,7 +6,7 @@ namespace WebApplication1.Models
 {
     public class DB
 {
-    private string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=DESKTOP-9IHIA03";
+    private string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
     private SqlConnection con = new SqlConnection();
 
     public DB()
@@ -17,7 +17,7 @@ namespace WebApplication1.Models
     public DataTable ReadTable(string table)
     {
         DataTable dt = new DataTable();
-        string query = "select EmployeeId ,Fname, RoleName ,PhoneNumber, Branch_ID from Employee";
+        string query = "select EmployeeId ,Fname, RoleName ,PhoneNumber, Branch_ID, Email from Employee";
         SqlCommand cmd = new SqlCommand(query, con);
 
         try
