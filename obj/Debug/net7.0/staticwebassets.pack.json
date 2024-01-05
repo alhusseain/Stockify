@@ -253,6 +253,10 @@
       "PackagePath": "staticwebassets\\static\\Shop.png"
     },
     {
+      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\Stock.png",
+      "PackagePath": "staticwebassets\\static\\Stock.png"
+    },
+    {
       "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\aldoha.png",
       "PackagePath": "staticwebassets\\static\\aldoha.png"
     },
@@ -279,6 +283,10 @@
     {
       "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\doha.jpg",
       "PackagePath": "staticwebassets\\static\\doha.jpg"
+    },
+    {
+      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\glogo.png",
+      "PackagePath": "staticwebassets\\static\\glogo.png"
     },
     {
       "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\logo.png",
@@ -319,6 +327,10 @@
     {
       "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\spiro7.png",
       "PackagePath": "staticwebassets\\static\\spiro7.png"
+    },
+    {
+      "Id": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\تصميم بدون عنوان.png",
+      "PackagePath": "staticwebassets\\static\\تصميم بدون عنوان.png"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.WebApplication1.Microsoft.AspNetCore.StaticWebAssets.props",

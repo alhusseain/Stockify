@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Vi+u77Q11snRDYE88tWijgUXDtcAdfmzeHa+78ZmDUg=",
+  "Hash": "qodXSU8ed+apVYqZtzxMthBjml9ntmlJUqHks0teh6U=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -1207,6 +1207,23 @@
       "OriginalItemSpec": "wwwroot\\static\\doha.jpg"
     },
     {
+      "Identity": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\glogo.png",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "static/glogo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\static\\glogo.png"
+    },
+    {
       "Identity": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\logo.png",
       "SourceId": "WebApplication1",
       "SourceType": "Discovered",
@@ -1392,6 +1409,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\static\\spiro7.png"
+    },
+    {
+      "Identity": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\Stock.png",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "static/Stock.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\static\\Stock.png"
+    },
+    {
+      "Identity": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\static\\تصميم بدون عنوان.png",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "static/تصميم بدون عنوان.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\static\\تصميم بدون عنوان.png"
     }
   ]
 }
