@@ -1,9 +1,8 @@
 ﻿@page
+@using System.Data;
 @model WebApplication1.Pages.EmployeesModel
 @{
     ViewData["Title"] = "Stockify";
-
-
 }
 
 <div class="container">
@@ -21,29 +20,29 @@
                         <th scope="col">Phone Number</th>
                         <th scope="col">Branch</th>
                         <th scope="col" style="text-align=center">Action</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
 
-                    @foreach(var item in Model.Employee)
-            {            
-                    <tr>
-                        <td>@item.EmployeeID</td>
-                        <td>@item.Fname</td>
-                        <td>@item.RoleName</td>
-                        <td>@item.Phonenumber</td>
-                        <td>@item.Branch_ID</td>
-                        <td>
-                            <button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>
-                            <button class="btn btn-primary ml-2" onclick="editRow(this)">Edit</button>
-                        </td>
-                    </tr>
-            }
+                    @foreach (DataRow row in Model.EmployeeDataTable.Rows)
+                    {
+                        <tr>
+                            <td>@row["EmployeeID"]</td>
+                            <td>@row["Fname"]</td>
+                            <td>@row["RoleName"]</td>
+                            <td>@row["PhoneNumber"]</td>
+                            <td>@row["Branch_ID"]</td>
+                            <td>
+                                <button class="btn btn-danger" method="post" onclick="deleteRow(this)">Delete</button>
+                                <button class="btn btn-primary ml-2" onclick="editRow(this)">Edit</button>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
-        </div>
 
+        </div>
         <!-- Button to add a new employee -->
         <button class="btn btn-primary" data-toggle="modal" data-target="#AddEditEmployee">New Employee</button>
     </div>
@@ -60,30 +59,32 @@
             </div>
             <div class="modal-body">
                 <!-- Form to Add or Edit an employee -->
-                <form action="/save_employee" method="POST" id="employeeForm">
+                <form method="post" id="employeeForm">
                     <input type="hidden" id="employeeIdHidden" name="employeeIdHidden">
 
                     <div class="form-group">
                         <label for="employeeId">Employee ID:</label>
-                        <input class="form-control" type="text" id="employeeId" name="employeeId" required>
+                        <input class="form-control" type="text" id="employeeId" asp-for="@Model.employeeId" required>
                     </div>
                     <div class="form-group">
                         <label for="name">Name:</label>
-                        <input class="form-control" type="text" id="name" name="name" required>
+                        <input class="form-control" asp-for="@Model.name" id="name" required>
                     </div>
                     <div class="form-group">
                         <label for="worksAs">Works as:</label>
-                        <input class="form-control" type="text" id="worksAs" name="worksAs" required>
+                        <input class="form-control" type="text" id="worksAs" asp-for="@Model.worksAs" required>
                     </div>
                     <div class="form-group">
                         <label for="phoneNumber">Phone Number:</label>
-                        <input class="form-control" type="tel" id="phoneNumber" name="phoneNumber" required>
+                        <input class="form-control" type="tel" id="phoneNumber" asp-for="@Model.phoneNumber" required>
                     </div>
                     <div class="form-group">
                         <label for="branch">Branch:</label>
-                        <input class="form-control" type="text" id="branch" name="branch" required>
+                        <input class="form-control" type="text" id="branch" asp-for="@Model.branch" required>
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="saveEmployee()">Save Employee</button>
+                    @* <input type="submit" onclick="saveEmployee()"> *@
+                    <button type="submit" class="btn btn-signin" onclick="saveEmployee()">ay kalam</button>
+
                 </form>
             </div>
         </div>
@@ -128,9 +129,11 @@
         document.getElementById('worksAs').value = '';
         document.getElementById('phoneNumber').value = '';
         document.getElementById('branch').value = '';
+
     }
 
     function saveEmployee() {
+        console.log("maryam here in save employee");
         // Retrieve input values from the form
         var employeeId = document.getElementById('employeeId').value;
         var name = document.getElementById('name').value;
@@ -155,18 +158,28 @@
             for (var i = 0; i < data.length; i++) {
                 var cell = newRow.insertCell(i);
                 cell.innerHTML = data[i];
+
             }
 
             var actionsCell = newRow.insertCell(data.length);
             actionsCell.innerHTML = '<button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>' +
                 '<button class="btn btn-primary ml-2" onclick="editRow(this)">Edit</button>';
-            resetForm()
+            document.getElementById('employeeIdHidden').value = '';
         }
+        var employee = {
+            EmployeeId: employeeId,
+            Name: name,
+            WorksAs: worksAs,
+            PhoneNumber: phoneNumber,
+            Branch: branch
+        };
+
+
 
         // Close the modal
         $('#AddEditEmployee').modal('hide');
 
 
-   
-    }
+
+    }
 </script>
