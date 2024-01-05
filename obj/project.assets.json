@@ -470,24 +470,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fires\\.nuget\\packages\\": {}
+    "C:\\Users\\Zewail Account\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fires\\Stockify\\Stockify\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\Zewail Account\\Downloads\\Stockify-code-ado\\Stockify-code-ado\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\fires\\Stockify\\Stockify\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\fires\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fires\\Stockify\\Stockify\\obj\\",
+      "projectPath": "C:\\Users\\Zewail Account\\Downloads\\Stockify-code-ado\\Stockify-code-ado\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\Zewail Account\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Zewail Account\\Downloads\\Stockify-code-ado\\Stockify-code-ado\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fires\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Zewail Account\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -530,7 +532,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

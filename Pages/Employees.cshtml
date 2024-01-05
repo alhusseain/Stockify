@@ -4,174 +4,54 @@
 @{
     ViewData["Title"] = "Stockify";
 }
-@* <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            display: flex;
-            min-height: 100vh;
-            margin: 0;
-        }
 
-        .sidebar {
-            width: 250px;
-            background-color: #343a40; 
-            padding: 20px;
-            height: 100vh;
-            position: fixed;
-            left: 0; 
-            top: 56px; 
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            color: #ffffff; 
-            z-index: 1000; 
-        }
+<div class="container">
+    <div class="jumbotron mt-5">
+        <h1 class="display-4">Employees Info can be found here</h1>
+        <p class="lead">Retail Management was never easier!.</p>
 
-        .categories {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Employee Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Works as</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Branch</th>
+                        <th scope="col" style="text-align=center">Action</th>
 
-        .category-item, .category-heading {
-            margin-bottom: 10px;
-        }
+                    </tr>
+                </thead>
+                <tbody>
 
-        .category-link, .category-heading {
-            text-decoration: none;
-            color: #ffffff; 
-            font-weight: bold;
-            display: block;
-            padding: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
+                    @foreach (DataRow row in Model.EmployeeDataTable.Rows)
+                    {
+                        <tr>
+                            <td>@row["EmployeeID"]</td>
+                            <td>@row["Fname"]</td>
+                            <td>@row["RoleName"]</td>
+                            <td>@row["PhoneNumber"]</td>
+                            <td>@row["Branch_ID"]</td>
+                            <td>
+                                <button class="btn btn-danger" onclick="deleteRow('@row["EmployeeID"]')">Delete</button>
+                                <button class="btn btn-primary ml-2" onclick="editRow('@row["EmployeeID"]')">Edit</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
 
-            .category-link:hover, .category-heading:hover {
-                background-color: #495057; 
-            }
-
-        
-        .container {
-            margin-left: 250px; 
-            padding-top: 56px; 
-
-       
-        .content {
-            padding-top: 20px;
-        }
-
-        .product-container {
-            display: flex;
-            flex-wrap: wrap;
-            margin-left: 50px; 
-            padding-top: 20px; 
-        }
-
-        .product-tile {
-            flex: 0 0 200px; 
-            margin-right: 20px;
-            margin-bottom: 20px;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .product-info {
-            position: relative;
-            bottom: 23%;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            padding: 2px; 
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #ffffff;
-            display: none;
-        }
-
-        .product-tile:hover .product-info {
-            display: block;
-        }
-
-        .product-info p {
-            margin: 0;
-            padding: 2px; 
-        }
-
-        .product-tile img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        .product-name {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            padding: 3px; 
-            color: #ffffff;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-        }
-   
-        
-
-        
-        .chosen-quantity {
-            display: inline-block;
-            margin: 0 5px; 
-            font-weight: bold;
-        }
-    </style>
-</head> *@
-
-<!-- Your existing HTML content -->
-<div class="container mt-4">
-  <div class="jumbotron">
-    <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Employee Id</th>
-                <th scope="col">Name</th>
-                <th scope="col">Works as</th>
-                <th scope="col">Phone Number</th>
-                <th scope="col">Branch</th>
-                <th scope="col" style="text-align=center">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (DataRow row in Model.EmployeeDataTable.Rows)
-            {
-                <tr>
-                    <td>@row["EmployeeID"]</td>
-                    <td>@row["Fname"]</td>
-                    <td>@row["RoleName"]</td>
-                    <td>@row["PhoneNumber"]</td>
-                    <td>@row["Branch_ID"]</td>
-                    <td>
-                        <button class="btn btn-danger" onclick="deleteRow('@row["EmployeeID"]')">Delete</button>
-                        <button class="btn btn-primary ml-2" onclick="editRow('@row["EmployeeID"]')">Edit</button>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        <!-- Button to add a new employee -->
+        <button class="btn btn-primary" data-toggle="modal" data-target="#AddEditEmployee">New Employee</button>
+    </div>
 </div>
-
 <!-- Button to add a new employee -->
 <button class="btn btn-primary" data-toggle="modal" data-target="#AddEditEmployee">New Employee</button>
     </div>
 </div>
 
-</div>
 <div class="modal fade" id="AddEditEmployee" tabindex="-1" role="dialog" aria-labelledby="AddEditEmployeeLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
