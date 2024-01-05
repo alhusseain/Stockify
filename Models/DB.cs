@@ -6,7 +6,7 @@ namespace WebApplication1.Models
 {
     public class DB
 {
-    private string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
+    private string connectionString = "Server=Victusx15\\DATABASE_SERVER;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
     private SqlConnection con = new SqlConnection();
 
     public DB()
@@ -17,7 +17,7 @@ namespace WebApplication1.Models
     public DataTable ReadTable(string table)
     {
         DataTable dt = new DataTable();
-        string query = "select EmployeeId ,Fname, RoleName ,PhoneNumber, Branch_ID, Email from Employee";
+        string query = "select EmployeeId ,Fname, RoleName ,PhoneNumber, Branch_ID from Employee";
         SqlCommand cmd = new SqlCommand(query, con);
 
         try
@@ -63,7 +63,7 @@ namespace WebApplication1.Models
             return res;
         }
 
-        public string DeleteEmployee(string EmployeeID)
+        public string DeleteEmployee(int EmployeeID)
         {
             string msg = "";
             string query = $"delete from Employee where EmployeeID={EmployeeID}";

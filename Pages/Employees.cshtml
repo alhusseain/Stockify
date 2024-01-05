@@ -19,7 +19,7 @@
                         <th scope="col">Works as</th>
                         <th scope="col">Phone Number</th>
                         <th scope="col">Branch</th>
-                        <th scope="col" style="text-align=center">Action</th>
+                        
 
                     </tr>
                 </thead>
@@ -33,10 +33,7 @@
                             <td>@row["RoleName"]</td>
                             <td>@row["PhoneNumber"]</td>
                             <td>@row["Branch_ID"]</td>
-                            <td>
-                                <button class="btn btn-danger" method="post" onclick="deleteRow(this)">Delete</button>
-                                <button class="btn btn-primary ml-2" onclick="editRow(this)">Edit</button>
-                            </td>
+                            
                         </tr>
                     }
                 </tbody>
@@ -59,7 +56,7 @@
             </div>
             <div class="modal-body">
                 <!-- Form to Add or Edit an employee -->
-                <form method="post" asp-page-handler="Insert" id="employeeForm">
+                <form method="post" id="employeeForm">
                     <input type="hidden" id="employeeIdHidden" name="employeeIdHidden">
 
                     <div class="form-group">
@@ -72,7 +69,7 @@
                     </div>
                     <div class="form-group">
                         <label for="worksAs">Works as:</label>
-                        <input class="form-control" type="tgiext" id="worksAs" asp-for="@Model.RoleName" required>
+                        <input class="form-control" type="text" id="worksAs" asp-for="@Model.RoleName" required>
                     </div>
                     <div class="form-group">
                         <label for="phoneNumber">Phone Number:</label>
@@ -83,7 +80,7 @@
                         <input class="form-control" type="text" id="branch" asp-for="@Model.Branch_ID" required>
                     </div>
                     @* <input type="submit" onclick="saveEmployee()"> *@
-                    <button type="submit" class="btn btn-signin" onclick="saveEmployee()">ADD</button>
+                    <button type="button" id="deleteButton" class="btn btn-danger">Delete</button>
 
                 </form>
             </div>

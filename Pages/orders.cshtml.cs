@@ -13,7 +13,7 @@ namespace WebApplication1.Pages
         {
             try
             {
-                string connectionString = "Server=DESKTOP-9IHIA03;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
+                string connectionString = "Server=Victusx15\\DATABASE_SERVER;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -32,7 +32,8 @@ namespace WebApplication1.Pages
                                     productID = reader["barcode"].ToString(),
                                     name = reader["Product_name"].ToString(),
                                     price = Convert.ToInt32(reader["price"]),
-                                    quantity = Convert.ToInt32(reader["product_multiple"]),
+                                    quanti
+                                    ty = Convert.ToInt32(reader["product_multiple"]),
 
                                 };
 

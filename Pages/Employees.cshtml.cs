@@ -14,6 +14,8 @@ namespace WebApplication1.Pages
     public class EmployeesModel : PageModel
     {
 
+
+
         private readonly ILogger<EmployeesModel> _logger;
         public DB db { get; set; }
         public DataTable EmployeeDataTable { get; set; }
@@ -34,7 +36,8 @@ namespace WebApplication1.Pages
 
         [BindProperty]
         public string EmployeeID { get; set; }
-
+        [BindProperty]
+        public int employeeid { get; set; }
         [BindProperty]
         public string Fname { get; set; }
 
@@ -46,12 +49,14 @@ namespace WebApplication1.Pages
         [BindProperty]
         public string Branch_ID { get; set; }
 
+        
+
 
 
         public IActionResult OnPostInsert()
         {
 
-            string connection = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
+            string connection = "Server=Victusx15\\DATABASE_SERVER;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
             SqlConnection con = new SqlConnection(connection);
             string query = "insert into Employee(Fname, EmployeeID, RoleName, PhoneNumber, Branch_ID) values(@Fname, @EmployeeID,@RoleName,@PhoneNumber,@Branch_ID)";
             SqlCommand cmd = new SqlCommand(query, con);
@@ -80,6 +85,16 @@ namespace WebApplication1.Pages
             return RedirectToPage("/Employees");
 
         }
+
+        public void OnPostDelete(string EmployeeIdd)
+        {
+
+            Console.WriteLine(EmployeeIdd);
+
+           
+            db.DeleteEmployee(employeeid);
+
+            
+        }
     }
 }
-

@@ -1,5 +1,4 @@
 ﻿@page
-@using System.Data;
 @model WebApplication1.Pages.AdminModel
 @{
     Layout = "";
@@ -79,26 +78,21 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th> PhoneNumber</th>
                 </tr>
             </thead>
-             <tbody>
-            @foreach (DataRow row in Model.EmployeeDataTable.Rows)
-            {
-                var roleName = row["RoleName"].ToString();
-
-                // Check if the role is equal to "Admin" before displaying the row
-                if (roleName.Equals("Admin", StringComparison.OrdinalIgnoreCase))
-                {
-                    <tr>
-                        <td>@row["EmployeeID"]</td>
-                        <td>@row["Fname"]</td>
-                        <td>@row["Email"]</td>
-                        <td>@row["PhoneNumber"]</td>
-                    </tr>
-                }
-            }
-        </tbody>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Admin 1</td>
+                    <td>admin1@example.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Admin 2</td>
+                    <td>admin2@example.com</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
         </table>
 
         <!-- Admins Modal -->
@@ -146,26 +140,21 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>PhoneNumber</th>
                 </tr>
             </thead>
             <tbody>
-            @foreach (DataRow row in Model.EmployeeDataTable.Rows)
-            {
-                var roleName = row["RoleName"].ToString();
-
-                // Check if the role is equal to "Admin" before displaying the row
-                if (roleName.Equals("Manager", StringComparison.OrdinalIgnoreCase))
-                {
-                    <tr>
-                        <td>@row["EmployeeID"]</td>
-                        <td>@row["Fname"]</td>
-                        <td>@row["Email"]</td>
-                        <td>@row["PhoneNumber"]</td>
-                    </tr>
-                }
-            }
-        </tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Manager 1</td>
+                    <td>manager1@example.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Manager 2</td>
+                    <td>manager2@example.com</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
         </table>
 
         <!-- Managers Modal -->

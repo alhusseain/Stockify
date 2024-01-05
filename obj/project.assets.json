@@ -574,24 +574,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\oahme\\.nuget\\packages\\": {}
+    "C:\\Users\\Zewail Account\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\Zewail Account\\OneDrive\\Desktop\\Final Main\\Stockify-main\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\oahme\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\obj\\",
+      "projectPath": "C:\\Users\\Zewail Account\\OneDrive\\Desktop\\Final Main\\Stockify-main\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\Zewail Account\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Zewail Account\\OneDrive\\Desktop\\Final Main\\Stockify-main\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\oahme\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Zewail Account\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -638,7 +640,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
