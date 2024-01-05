@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XNl/jF1zNQ/9zBNB/Rf4DZkQr2Q8F8V8oOTCK/kNVlSlY2XTYNUpKtpG/4uLakDEZ53AlPQkRGfhMSggayAJ5Q==",
+  "dgSpecHash": "aLnHPfbqBnCGGClTUnOvbWYnTCeD13z7YYyV54L0B3f8ETEILb1xuZ3yIX/pK5n/r1zMEgeqF1aGAEWya5di6w==",
   "success": true,
-  "projectFilePath": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\latest\\WebApplication1.csproj",
+  "projectFilePath": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\Latest\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\karee\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\karee\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
