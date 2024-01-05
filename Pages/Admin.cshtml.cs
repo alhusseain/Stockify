@@ -40,7 +40,6 @@ namespace WebApplication1.Pages
 
         [BindProperty]
         public string PhoneNumber { get; set; }
-<<<<<<< HEAD
 
         [BindProperty]
         public string Email { get; set; }
@@ -109,9 +108,6 @@ namespace WebApplication1.Pages
 
                 return RedirectToPage("/Admin");
             }
-=======
-
->>>>>>> bd9bc8a1c65648ed68dd2a7bc79bf7ad165f2b31
     }
 }
 
