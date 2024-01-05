@@ -127,15 +127,13 @@
         </div>
 
 
+        
+
         <script>
-            var userRole = Context.Request.Cookies["userRole"];
-            if (userRole == "Manager") {
-                
-            }
-            else {
-                Layout = "_CLayout";
-            }
-            }
+           var role= "@Model.KRole";
+
+            document.cookie = "userRole="+role;
+           
         </script>
 
     </div>
