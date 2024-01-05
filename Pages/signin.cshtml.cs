@@ -26,7 +26,7 @@ namespace WebApplication1.Pages
         {
             if (ModelState.IsValid)
             {
-                string connectionString = "Server=KAREEM;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
+                string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
