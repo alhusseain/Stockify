@@ -9,85 +9,85 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebApplication1
 build_property.RootNamespace = WebApplication1
-build_property.ProjectDir = C:\Users\oahme\OneDrive\Desktop\Stockify\Stockify\
+build_property.ProjectDir = c:\Users\oahme\OneDrive\Desktop\Stockify\Stockify\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\oahme\OneDrive\Desktop\Stockify\Stockify
+build_property.MSBuildProjectDirectory = c:\Users\oahme\OneDrive\Desktop\Stockify\Stockify
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Admin.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/ChangePassword.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Devices.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Devices.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV2aWNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Employees.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Employees.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Error.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/home.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcaG9tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Index.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/orders.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/orders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcb3JkZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/products.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/products.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccHJvZHVjdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/signin.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/signin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc2lnbmluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/SignUp.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnblVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/suppliers.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/suppliers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc3VwcGxpZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/_ViewImports.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/_ViewStart.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Shared/_CLayout.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Shared/_CLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9DTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-ohzegd1799
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Shared/_Layout.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-g6ltozs93r
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Shared/_MLayout.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Shared/_MLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9NTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-qnzqtg19cp
 
-[C:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Shared/_TLayout.cshtml]
+[c:/Users/oahme/OneDrive/Desktop/Stockify/Stockify/Pages/Shared/_TLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9UTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-vliqczlfh2

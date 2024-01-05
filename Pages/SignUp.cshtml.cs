@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.ComponentModel.DataAnnotations;
 
 public class SignUpModel : PageModel
 {
@@ -12,6 +13,7 @@ public class SignUpModel : PageModel
     public string Username { get; set; }
 
     [BindProperty]
+    [StringLength(8, ErrorMessage = "The {0} must be at least {1} characters long.", MinimumLength = 8)]
     public string Password { get; set; }
 
     [BindProperty]
