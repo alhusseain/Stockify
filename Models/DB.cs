@@ -6,7 +6,7 @@ namespace WebApplication1.Models
 {
     public class DB
 {
-    private string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
+    private string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=KAREEM";
     private SqlConnection con = new SqlConnection();
 
     public DB()
@@ -151,28 +151,5 @@ namespace WebApplication1.Models
             return employee;
 
         }
-
-        public bool AdminExists(string ID)
-        {
-            string query = $"SELECT COUNT(*) FROM Employee WHERE EmployeeID = '{ID}'";
-            SqlCommand cmd = new SqlCommand(query, con);
-
-            try
-            {
-                con.Open();
-                int count = (int)cmd.ExecuteScalar();
-                return count > 0;
-            }
-            catch (SqlException err)
-            {
-                Console.WriteLine(err.Message);
-                return false;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
     }
 }

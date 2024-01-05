@@ -17,6 +17,9 @@ namespace WebApplication1.Pages
         [BindProperty]
         public string Password { get; set; }
 
+       
+        public string KRole ;
+
         public signinModel(ILogger<signinModel> logger)
         {
             _logger = logger;
@@ -24,9 +27,10 @@ namespace WebApplication1.Pages
 
         public IActionResult OnPost()
         {
+
             if (ModelState.IsValid)
             {
-                string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
+                string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=KAREEM";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -64,6 +68,7 @@ namespace WebApplication1.Pages
                                         if (roleResult != null)
                                         {
                                             string userRole = roleResult.ToString();
+                                           
                                         
                                             return RedirectToRolePage(userRole);
                                             
@@ -90,13 +95,16 @@ namespace WebApplication1.Pages
 
         private IActionResult RedirectToRolePage(string userRole)
         {
-            switch (userRole)
+          if   (userRole == "Admin")
             {
-                case "Admin":
-                    return RedirectToPage("/Admin");
+                KRole = userRole;
+                return RedirectToPage("/Admin");
+            }
+          else
+            {
+                KRole = userRole;
+                return RedirectToPage("/home");
 
-                default:
-                    return RedirectToPage("/home");
             }
         }
     }

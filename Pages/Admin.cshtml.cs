@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Data;
 using WebApplication1.Models;
 using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using System.Xml.Linq;
 
 namespace WebApplication1.Pages
 {
@@ -37,6 +40,7 @@ namespace WebApplication1.Pages
 
         [BindProperty]
         public string PhoneNumber { get; set; }
+<<<<<<< HEAD
 
         [BindProperty]
         public string Email { get; set; }
@@ -105,6 +109,9 @@ namespace WebApplication1.Pages
 
                 return RedirectToPage("/Admin");
             }
+=======
+
+>>>>>>> bd9bc8a1c65648ed68dd2a7bc79bf7ad165f2b31
     }
 }
 

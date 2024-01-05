@@ -36,7 +36,7 @@ public class ChangePasswordModel : PageModel
         {
             if (ModelState.IsValid)
             {
-                string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=DESKTOP-9IHIA03";
+                string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=KAREEM";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
