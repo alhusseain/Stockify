@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
+using System;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 
@@ -15,7 +17,16 @@ public class SignUpModel : PageModel
     public string Password { get; set; }
 
     [BindProperty]
+    public string ConfirmPassword { get; set; }
+
+    [BindProperty]
     public string ID { get; set; }
+
+    [BindProperty]
+    public string Answer { get; set; }
+
+    [BindProperty]
+    public string Question { get; set; }
 
     public SignUpModel(IConfiguration configuration)
     {
@@ -23,66 +34,72 @@ public class SignUpModel : PageModel
     }
 
     public IActionResult OnPost()
+    {
+        try
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
+                if (Password != ConfirmPassword)
                 {
-                    string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
+                    ModelState.AddModelError("ConfirmPassword", "The password and confirmation password do not match.");
+                    return Page();
+                }
 
-                    using (SqlConnection connection = new SqlConnection(connectionString))
+                string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    if (IsIdAlreadyExists(connection, ID))
                     {
-                        connection.Open();
+                        ModelState.AddModelError("ID", "Error with ID. This ID already exists.");
+                        return Page();
+                    }
 
-                        if (IsIdAlreadyExists(connection, ID))
+                    string hashedPassword = HashPassword(Password);
+
+                    string insertQuery = "INSERT INTO Signups (Username, Password, Employee_id, Answer, Question) VALUES (@Username, @Password, @ID, @Answer, @Question)";
+
+                    using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@Username", Username);
+                        command.Parameters.AddWithValue("@Password", hashedPassword);
+                        command.Parameters.AddWithValue("@ID", ID);
+                        command.Parameters.AddWithValue("@Answer", Answer);
+                        command.Parameters.AddWithValue("@Question", Question);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
                         {
-                            ModelState.AddModelError("ID", "Error with ID. This ID already exists.");
-                            return Page();
-                        }
-
-                        string hashedPassword = HashPassword(Password);
-
-                        string insertQuery = "INSERT INTO Signups (Username, Password, Employee_id) VALUES (@Username, @Password, @ID)";
-
-                        using (SqlCommand command = new SqlCommand(insertQuery, connection))
-                        {
-                            command.Parameters.AddWithValue("@Username", Username);
-                            command.Parameters.AddWithValue("@Password", hashedPassword);
-                            command.Parameters.AddWithValue("@ID", ID);
-
-                            int rowsAffected = command.ExecuteNonQuery();
-
-                            if (rowsAffected > 0)
-                            {
-                                return RedirectToPage("/SignIn");
-                            }
+                            return RedirectToPage("/SignIn");
                         }
                     }
                 }
             }
-            catch (SqlException)
-            {
-                ModelState.AddModelError(string.Empty, "An error occurred while processing your request. Please try again.");
-            }
-
-            return Page();
         }
+        catch (SqlException)
+        {
+            ModelState.AddModelError(string.Empty, "An error occurred while processing your request. Please try again.");
+        }
+
+        return Page();
+    }
 
     private bool IsIdAlreadyExists(SqlConnection connection, string id)
     {
         string checkQuery = "SELECT COUNT(*) FROM Signups WHERE Employee_id = @ID";
-        
+
         using (SqlCommand command = new SqlCommand(checkQuery, connection))
         {
             command.Parameters.AddWithValue("@ID", id);
 
             int count = (int)command.ExecuteScalar();
-            
+
             return count > 0;
         }
     }
-    
-    
 
     private string HashPassword(string password)
     {
