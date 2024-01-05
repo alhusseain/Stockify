@@ -36,47 +36,75 @@ namespace WebApplication1.Pages
         public string Fname { get; set; }
 
         [BindProperty]
-        public string RoleName { get; set; }
-
-        [BindProperty]
         public string PhoneNumber { get; set; }
+
         [BindProperty]
         public string Email { get; set; }
 
 
+        [BindProperty]
+        public string ManagerID { get; set; }
+
+        [BindProperty]
+        public string ManagerName { get; set; }
+
+        [BindProperty]
+        public string ManagerEmail { get; set; }
+
+        [BindProperty]
+        public string ManagerPhoneNumber { get; set; }
+
+
 
         public IActionResult OnPost()
-        {
-
-            string connection = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
-            SqlConnection con = new SqlConnection(connection);
-            string query = "insert into Employee(Fname, EmployeeID, RoleName, PhoneNumber, Email) values(@Fname, @EmployeeID,@RoleName,@PhoneNumber,@Email)";
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@Fname", Fname);
-            cmd.Parameters.AddWithValue("@EmployeeID", EmployeeID);
-            cmd.Parameters.AddWithValue("@RoleName", "Admin");
-            cmd.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
-            cmd.Parameters.AddWithValue("@Email", Email);
-            Console.Write(query);
-            string res = "";
-            try
             {
-                con.Open();
-                res = cmd.ExecuteNonQuery().ToString();
+                string connection = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
+                SqlConnection con = new SqlConnection(connection);
+                string query = "";
 
-            }
-            catch (SqlException err)
-            {
-                res = err.Message;
-            }
-            finally
-            {
+                SqlCommand cmd = new SqlCommand(query, con);
 
-                con.Close();
-            }
-            return RedirectToPage("/Admin");
+                if(Request.Form["adminButton"].Count > 0)
+                {
+                    // Admin button was pressed
+                    query = "insert into Employee(Fname, EmployeeID, RoleName, PhoneNumber, Email) values(@Fname, @EmployeeID, @RoleName, @PhoneNumber, @Email)";
+                    cmd.Parameters.AddWithValue("@Fname", Fname);
+                    cmd.Parameters.AddWithValue("@EmployeeID", EmployeeID);
+                    cmd.Parameters.AddWithValue("@RoleName", "Admin");
+                    cmd.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
+                    cmd.Parameters.AddWithValue("@Email", Email);
+                }
+                else
+                {
+                    // Manager button was pressed
+                    query = "insert into Employee(Fname, EmployeeID, RoleName, PhoneNumber, Email) values(@ManagerName, @ManagerID, @RoleName, @ManagerPhoneNumber, @ManagerEmail)";
+                    cmd.Parameters.AddWithValue("@ManagerName", ManagerName);
+                    cmd.Parameters.AddWithValue("@ManagerID", ManagerID);
+                    cmd.Parameters.AddWithValue("@RoleName", "Manager");
+                    cmd.Parameters.AddWithValue("@ManagerPhoneNumber", ManagerPhoneNumber);
+                    cmd.Parameters.AddWithValue("@ManagerEmail", ManagerEmail);
+                }
 
-        }
+                cmd.CommandText = query;
+                Console.Write(query);
+                string res = "";
+
+                try
+                {
+                    con.Open();
+                    res = cmd.ExecuteNonQuery().ToString();
+                }
+                catch (SqlException err)
+                {
+                    res = err.Message;
+                }
+                finally
+                {
+                    con.Close();
+                }
+
+                return RedirectToPage("/Admin");
+            }
     }
 }
 

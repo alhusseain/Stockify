@@ -77,8 +77,7 @@ namespace WebApplication1.Pages
 
                 con.Close();
             }
-            return RedirectToPage("/Employees");
-
+            return RedirectToPage("/Employees");            
         }
     }
 }
