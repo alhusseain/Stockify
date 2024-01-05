@@ -26,7 +26,7 @@ namespace WebApplication1.Pages
         {
             if (ModelState.IsValid)
             {
-                string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=DESKTOP-9IHIA03";
+                string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -51,7 +51,24 @@ namespace WebApplication1.Pages
 
                             if (hashedEnteredPassword == storedHashedPassword)
                             {
-                                return RedirectToPage("/home");
+                                string roleQuery = "SELECT e.Rolename FROM Signups s " +
+                                   "JOIN Employee e ON s.Employee_id = e.EmployeeID " +
+                                   "WHERE s.Username = @Username";
+
+                                    using (SqlCommand roleCommand = new SqlCommand(roleQuery, connection))
+                                    {
+                                        roleCommand.Parameters.AddWithValue("@Username", Username);
+
+                                        object roleResult = roleCommand.ExecuteScalar();
+
+                                        if (roleResult != null)
+                                        {
+                                            string userRole = roleResult.ToString();
+                                        
+                                            return RedirectToRolePage(userRole);
+                                            
+                                        }
+                                    }
                             }
                         }
                     }
@@ -69,6 +86,18 @@ namespace WebApplication1.Pages
                 prf: KeyDerivationPrf.HMACSHA256,
                 iterationCount: 10000,
                 numBytesRequested: 256 / 8));
+        }
+
+        private IActionResult RedirectToRolePage(string userRole)
+        {
+            switch (userRole)
+            {
+                case "Admin":
+                    return RedirectToPage("/Admin");
+
+                default:
+                    return RedirectToPage("/home");
+            }
         }
     }
 }

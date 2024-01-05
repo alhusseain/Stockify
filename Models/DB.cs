@@ -6,7 +6,7 @@ namespace WebApplication1.Models
 {
     public class DB
 {
-    private string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=DESKTOP-9IHIA03";
+    private string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
     private SqlConnection con = new SqlConnection();
 
     public DB()

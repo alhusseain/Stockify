@@ -574,19 +574,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fires\\.nuget\\packages\\": {}
+    "C:\\Users\\oahme\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fires\\Stockify\\Stockify\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\fires\\Stockify\\Stockify\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\fires\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fires\\Stockify\\Stockify\\obj\\",
+      "projectPath": "C:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\oahme\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\oahme\\OneDrive\\Desktop\\Stockify\\Stockify\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fires\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\oahme\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
