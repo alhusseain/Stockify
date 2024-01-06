@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta " content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
@@ -102,40 +102,49 @@
         </table>
 
         <!-- Admins Modal -->
-        <div class="modal fade" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="adminModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="adminModalLabel">Add Admin</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+    <div class="modal fade" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="adminModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="adminModalLabel">Add Admin</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Add Admin Form Content -->
+                <form method="post" asp-page-handler="Insert" id="employeeForm">
+                    <input type="hidden" id="employeeIdHidden" name="employeeIdHidden">
+                    
+                    <div class="form-group">
+                        <label for="adminID">ID:</label>
+                        <input type="text" class="form-control"  placeholder="Enter ID" id="adminID" asp-for="@Model.EmployeeID" required>
                     </div>
-                    <div class="modal-body">
-                        <!-- Add Admin Form Content -->
-                        <form>
-                            <div class="form-group">
-                                <label for="adminName">Name</label>
-                                <input type="text" class="form-control" id="adminName" placeholder="Enter name">
-                            </div>
-                            <div class="form-group">
-                                <label for="adminEmail">Email</label>
-                                <input type="email" class="form-control" id="adminEmail" placeholder="Enter email">
-                            </div>
-                            <!-- Add more form fields as needed -->
-                        </form>
+                    <div class="form-group">
+                        <label for="adminName">Name:</label>
+                        <input type="text" class="form-control"  placeholder="Enter name" id="adminName" asp-for="@Model.Fname" required>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                    <div class="form-group">
+                        <label for="adminEmail">Email:</label>
+                        <input type="text" class="form-control" placeholder="Enter email" id="adminEmail" asp-for="@Model.Email" required>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="adminPhone">Phone Number:</label>
+                        <input type="text" class="form-control" placeholder="Enter Phone Number" id="adminPhone" asp-for="@Model.PhoneNumber" required>
+                    </div>
+                    <!-- Add more form fields as needed -->
+                    <button type="submit" class="btn btn-primary" name="adminButton" onclick="saveEmployee()">Save changes</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Managers Table -->
-    <div class="container mt-5">
+     <div class="container mt-5">
         <h2 class="text-success mb-4">Managers Table</h2>
         <button type="button" class="btn btn-success mb-3" data-toggle="modal" data-target="#managerModal">
             Add Manager
@@ -169,33 +178,41 @@
         </table>
 
         <!-- Managers Modal -->
-        <div class="modal fade" id="managerModal" tabindex="-1" role="dialog" aria-labelledby="managerModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="managerModalLabel">Add Manager</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- Add Manager Form Content -->
-                        <form>
-                            <div class="form-group">
-                                <label for="managerName">Name</label>
-                                <input type="text" class="form-control" id="managerName" placeholder="Enter name">
-                            </div>
-                            <div class="form-group">
-                                <label for="managerEmail">Email</label>
-                                <input type="email" class="form-control" id="managerEmail" placeholder="Enter email">
-                            </div>
-                            <!-- Add more form fields as needed -->
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+         <div class="modal fade" id="managerModal" tabindex="-1" role="dialog" aria-labelledby="managerModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="managerModalLabel">Add Manager</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Add Manager Form Content -->
+                    <form method="post" asp-page-handler="Insert" id="employeeForm"> 
+                        <input type="hidden" id="employeeIdHidden" name="employeeIdHidden">
+                        <div class="form-group">
+                            <label for="managerID">ID:</label>
+                            <input type="text" class="form-control" placeholder="Enter ID" id="managerID" asp-for="@Model.ManagerID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="managerName">Name:</label>
+                            <input type="text" class="form-control" placeholder="Enter name" id="managerName" asp-for="@Model.ManagerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="managerEmail">Email:</label>
+                            <input type="text" class="form-control" placeholder="Enter email" id="managerEmail" asp-for="@Model.ManagerEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="managerPhone">Phone Number:</label>
+                            <input type="text" class="form-control" placeholder="Enter Phone Number" id="managerPhone" asp-for="@Model.ManagerPhoneNumber" required>
+                        </div>
+                        <!-- Add more form fields as needed -->
+                        <button type="submit" class="btn btn-primary" onclick="saveEmployee()">Save changes</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -206,6 +223,99 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+
     <!-- Additional scripts for each modal, if needed -->
+    <script>
+    var editingRow;
+
+    function deleteRow(button) {
+        // Find the closest 'tr' element and remove it
+        var row = button.closest('tr');
+        row.remove();
+    }
+
+    function editRow(button) {
+        editingRow = button.closest('tr');
+
+        // Get the data from the row
+        var employeeId = editingRow.cells[0].innerHTML;
+        var name = editingRow.cells[1].innerHTML;
+        var worksAs = editingRow.cells[2].innerHTML;
+        var phoneNumber = editingRow.cells[3].innerHTML;
+        var branch = editingRow.cells[4].innerHTML;
+
+        // Set the values in the modal form
+        document.getElementById('employeeIdHidden').value = employeeId;
+        document.getElementById('employeeId').value = employeeId;
+        document.getElementById('name').value = name;
+        document.getElementById('worksAs').value = worksAs;
+        document.getElementById('phoneNumber').value = phoneNumber;
+        document.getElementById('branch').value = branch;
+
+        // Open the modal
+        $('#AddEditEmployee').modal('show');
+    }
+
+    function resetForm() {
+        document.getElementById('employeeIdHidden').value = '';
+        document.getElementById('employeeId').value = '';
+        document.getElementById('name').value = '';
+        document.getElementById('worksAs').value = '';
+        document.getElementById('phoneNumber').value = '';
+        document.getElementById('branch').value = '';
+
+    }
+
+    function saveEmployee() {
+        console.log("maryam here in save employee");
+        // Retrieve input values from the form
+        var employeeId = document.getElementById('employeeId').value;
+        var name = document.getElementById('name').value;
+        var worksAs = document.getElementById('worksAs').value;
+        var phoneNumber = document.getElementById('phoneNumber').value;
+        var branch = document.getElementById('branch').value;
+
+        if (editingRow) {
+            // Update the existing row if in edit mode
+            editingRow.cells[0].innerHTML = employeeId;
+            editingRow.cells[1].innerHTML = name;
+            editingRow.cells[2].innerHTML = worksAs;
+            editingRow.cells[3].innerHTML = phoneNumber;
+            editingRow.cells[4].innerHTML = branch;
+            editingRow = null; // Reset editing mode
+        } else {
+            // Create a new row if not in edit mode
+            var tbody = document.querySelector('tbody');
+            var newRow = tbody.insertRow();
+
+            var data = [employeeId, name, worksAs, phoneNumber, branch];
+            for (var i = 0; i < data.length; i++) {
+                var cell = newRow.insertCell(i);
+                cell.innerHTML = data[i];
+
+            }
+
+            var actionsCell = newRow.insertCell(data.length);
+            actionsCell.innerHTML = '<button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>' +
+                '<button class="btn btn-primary ml-2" onclick="editRow(this)">Edit</button>';
+            document.getElementById('employeeIdHidden').value = '';
+        }
+        var employee = {
+            EmployeeId: employeeId,
+            Name: name,
+            WorksAs: worksAs,
+            PhoneNumber: phoneNumber,
+            Branch: branch
+        };
+
+
+
+        // Close the modal
+        $('#AddEditEmployee').modal('hide');
+
+
+
+    }
+</script>
 </body>
 </html>
