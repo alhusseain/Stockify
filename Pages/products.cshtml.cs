@@ -84,7 +84,7 @@ namespace WebApplication1.Pages
 
         public IActionResult OnPost()
         {
-            string query="insert into Products(Barcode,supplier_code,price,Product_name,Decription,Max_number,Recorder_level) values(@Barcode,@supplier_code,@price,@Product_name,@Description,@Max_number,@Recorder_level)";
+            string query="insert into Products(Barcode,supplier_code,price,Product_name,Decription,Max_number,current_number,Recorder_level) values(@Barcode,@supplier_code,@price,@Product_name,@Description,@Max_number,@Recorder_level,@Recorder_level)";
             SqlConnection connection = new SqlConnection(connectionstring);
             connection.Open();
             SqlCommand command = new SqlCommand(query, connection);
