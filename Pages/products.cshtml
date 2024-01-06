@@ -364,7 +364,7 @@
     </style>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="sidebar">
         <h4 class="mb-4 category-heading" data-toggle="collapse" href="#categoriesCollapse" role="button" aria-expanded="false" aria-controls="categoriesCollapse">
             Categories
@@ -397,7 +397,7 @@
                 @foreach(var product in Model.products[category1])
                 {
                     <div class="product-tile">
-                            <img src="@product.Image" alt="product name">
+                            <img src="@product.Image" alt="NO IMAGE FOUND">
                             <div class="product-name">@product.Name</div>
                             <div class="product-info">Capacity: @product.Quantity<span class="total-quantity">5</span></div>
                     </div>
@@ -414,7 +414,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="AddproductLabel">Employee Details</h5>
+                <h5 class="modal-title" id="AddproductLabel">Product input</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

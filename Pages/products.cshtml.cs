@@ -16,7 +16,8 @@ namespace WebApplication1.Pages
         [BindProperty]
         public required string Role_products { get; set; }
         // Example product data for each category
-        public Dictionary<string, List<Product>> products { get; set; }
+        public Dictionary<string, List<Product>> products { get; set; }=new Dictionary<string, List<Product>>();
+
 
 
         public List<string> categories { get; set; }= new List<string>();
@@ -24,7 +25,7 @@ namespace WebApplication1.Pages
         [BindProperty]
         public int Barcode{ get; set;}
         [BindProperty]
-        public float Price{ get; set;}
+        public double Price{ get; set;}
         [BindProperty]
         public int Quantity{ get; set;}
         [BindProperty]
@@ -40,10 +41,11 @@ namespace WebApplication1.Pages
         public string supply_code{ get; set;}
         public string connectionstring="Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=DESKTOP-9IHIA03";
         
+
         public void OnGet()
         {
             // Default category to display initially
-            products = new Dictionary<string, List<Product>>()
+            /*products = new Dictionary<string, List<Product>>()
             {
                 {
                     "grocery", new List<Product>
@@ -78,10 +80,50 @@ namespace WebApplication1.Pages
             };
             categories.Add("grocery");
             categories.Add("snacks");
-            categories.Add("drinks");
+            categories.Add("drinks");*/
+
+            string categoryquery="select distinct Product_type from Supply_company";
+            SqlConnection connection=new SqlConnection(connectionstring);
+            connection.Open();
+            SqlCommand command=new SqlCommand(categoryquery,connection);
+            SqlDataReader reader=command.ExecuteReader();
+            while (reader.Read())
+            {   
+                List<Product> products_list=new List<Product>();
+                string fetched=reader.GetString(0);
+                categories.Add(fetched);
+                products[fetched]=products_list;
+            
+            }
+            connection.Close();
+
+            string query="select *from Products p join Supply_company s on p.supplier_code=s.Supplier_code";
+            SqlConnection connection1=new SqlConnection(connectionstring);
+            connection1.Open();
+            SqlCommand command1=new SqlCommand(query,connection1);
+            SqlDataReader reader1=command1.ExecuteReader();
+            while (reader1.Read())
+            {
+                Product product=new Product();
+                product.Barcode=reader1.GetInt32(0);
+                product.Price=reader1.GetDouble(2);
+                product.Name=reader1.GetString(3);
+                product.Image=reader1.GetString(4);
+                product.Max=reader1.GetInt32(5);
+                product.Recorder_level=reader1.GetInt32(7);
+                if(!reader1.IsDBNull(6))
+                {
+                    product.Quantity=reader1.GetInt32(6);
+                }
+                else{
+                    product.Quantity=product.Recorder_level;
+                }
+                products[reader1.GetString(9)].Add(product);
+            
+
+            }
 
         }
-
         public IActionResult OnPost()
         {
             string query="insert into Products(Barcode,supplier_code,price,Product_name,Decription,Max_number,current_number,Recorder_level) values(@Barcode,@supplier_code,@price,@Product_name,@Description,@Max_number,@Recorder_level,@Recorder_level)";
@@ -110,10 +152,16 @@ namespace WebApplication1.Pages
 
          public class Product
          {
+             public int Barcode { get; set; }
+             public double Price{ get; set; }
              public string Name { get; set; }
              public string Image { get; set; }
              public int Quantity { get; set; }
              public string Company { get; set; }
+
+             public int Max { get; set; }
+             public int Recorder_level { get; set; }
+
 
              // Add any other necessary properties, e.g., TotalQuantity
              public int TotalQuantity { get; set; }
