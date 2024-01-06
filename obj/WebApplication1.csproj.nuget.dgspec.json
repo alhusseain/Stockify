@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\latest\\WebApplication1.csproj": {}
+    "C:\\Users\\fires\\Stockify\\Stockify\\WebApplication1.csproj": {}
   },
   "projects": {
-    "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\latest\\WebApplication1.csproj": {
+    "C:\\Users\\fires\\Stockify\\Stockify\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\latest\\WebApplication1.csproj",
+        "projectUniqueName": "C:\\Users\\fires\\Stockify\\Stockify\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\latest\\WebApplication1.csproj",
-        "packagesPath": "C:\\Users\\karee\\.nuget\\packages\\",
-        "outputPath": "D:\\.ZC\\ZC y2 s1\\CSAI 202\\Release\\latest\\obj\\",
+        "projectPath": "C:\\Users\\fires\\Stockify\\Stockify\\WebApplication1.csproj",
+        "packagesPath": "C:\\Users\\fires\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fires\\Stockify\\Stockify\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\karee\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\fires\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -68,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

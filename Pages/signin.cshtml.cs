@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using System.Data.SqlClient;
+using System.ComponentModel.DataAnnotations;
 
 
 
@@ -17,8 +18,18 @@ namespace WebApplication1.Pages
         [BindProperty]
         public string Password { get; set; }
 
-       
-        public string KRole ;
+        // private string _KRole="";
+        // public string KRole
+        // {
+        //     get { return _KRole; }
+        //     set { _KRole = value; }
+        // }       
+        public string KRole="Manager";
+
+        public void set_krole(string x)
+        {
+            KRole = x;
+        }
 
         public signinModel(ILogger<signinModel> logger)
         {
@@ -30,7 +41,7 @@ namespace WebApplication1.Pages
 
             if (ModelState.IsValid)
             {
-                string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=KAREEM";
+                string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=DESKTOP-9IHIA03";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -69,7 +80,8 @@ namespace WebApplication1.Pages
                                         {
                                             string userRole = roleResult.ToString();
                                            
-                                        
+                                            KRole=userRole;
+
                                             return RedirectToRolePage(userRole);
                                             
                                         }
@@ -97,12 +109,10 @@ namespace WebApplication1.Pages
         {
           if   (userRole == "Admin")
             {
-                KRole = userRole;
                 return RedirectToPage("/Admin");
             }
           else
             {
-                KRole = userRole;
                 return RedirectToPage("/home");
 
             }
