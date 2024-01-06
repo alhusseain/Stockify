@@ -1,6 +1,7 @@
 ﻿@* @page
 @model WebApplication1.Pages.productsModel
 @{
+ Layout = TempData["Layout"] as string ?? "_Layout";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -215,6 +216,7 @@
 @page
 @model WebApplication1.Pages.ProductsModel
 @{
+    Layout = ViewData["Layout"] as string ?? "_Layout";
 }
 
 <!DOCTYPE html>

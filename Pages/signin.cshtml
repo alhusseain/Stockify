@@ -127,14 +127,12 @@
         </div>
 
 
-        
-
         <script>
-           var role= "@Model.KRole";
+            var role = "@Model.TempData["Layout"]";
 
-            document.cookie = "userRole="+role;
-           
-        </script>
+            document.cookie = "userRole=" + role;
+
+        </script> 
 
     </div>
 </body>

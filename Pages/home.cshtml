@@ -2,9 +2,12 @@
 @model homeModel
 
 @{
+    
+    Layout = TempData["Layout"] as string ?? "_Layout";
     ViewData["Title"] = "Stockify";
    
 }
+
 
 
     <div class="container">

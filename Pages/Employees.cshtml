@@ -3,13 +3,54 @@
 @model WebApplication1.Pages.EmployeesModel
 @{
     ViewData["Title"] = "Stockify";
+    Layout = TempData["Layout"] as string ?? "_Layout";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .jumbotron {
+            text-align: center;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        input[type=text] {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #ddd;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background: #ccc;
+            }
+    </style>
+</head>
 
 <div class="container">
     <div class="jumbotron mt-5">
         <h1 class="display-4">Employees Info can be found here</h1>
         <p class="lead">Retail Management was never easier!.</p>
-
+        <div class="search-container" >
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
         <div class="table-responsive">
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">

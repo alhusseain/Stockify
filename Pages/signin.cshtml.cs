@@ -17,8 +17,8 @@ namespace WebApplication1.Pages
         [BindProperty]
         public string Password { get; set; }
 
-       
-        public string KRole ;
+        [BindProperty]
+        public string? KRole { get; set; }
 
         public signinModel(ILogger<signinModel> logger)
         {
@@ -68,9 +68,29 @@ namespace WebApplication1.Pages
                                         if (roleResult != null)
                                         {
                                             string userRole = roleResult.ToString();
-                                           
-                                        
-                                            return RedirectToRolePage(userRole);
+
+                                          if (userRole == "Cashier")
+                                        {
+                                            TempData["Layout"] = "_CLayout";
+                                        }
+                                         else if (userRole == "Manager")
+                                        {
+                                            TempData["Layout"] = "_Layout";
+
+                                        }
+                                         else if (userRole == "Transporter")
+                                        {
+                                            TempData["Layout"] = "_TLayout";
+
+                                        }
+                                         else if (userRole == "Transporter")
+                                        {
+                                            TempData["Layout"] = "_TLayout";
+
+                                        }
+                                          TempData.Keep();
+
+                                        return RedirectToRolePage(userRole);
                                             
                                         }
                                     }
@@ -83,6 +103,17 @@ namespace WebApplication1.Pages
             return Page();
         }
 
+
+        public void OnGet()
+        {
+            var customLayout = TempData["CustomLayout"] as string;
+            if (!string.IsNullOrEmpty(customLayout))
+            {
+                // Use customLayout as needed
+                ViewData["Layout"] = customLayout;
+            }
+        }
+
         private string HashPassword(string password, byte[] salt)
         {
             return Convert.ToBase64String(KeyDerivation.Pbkdf2(
@@ -92,12 +123,12 @@ namespace WebApplication1.Pages
                 iterationCount: 10000,
                 numBytesRequested: 256 / 8));
         }
-
+        
         private IActionResult RedirectToRolePage(string userRole)
         {
           if   (userRole == "Admin")
             {
-                KRole = userRole;
+                
                 return RedirectToPage("/Admin");
             }
           else
@@ -106,6 +137,11 @@ namespace WebApplication1.Pages
                 return RedirectToPage("/home");
 
             }
+
+
         }
-    }
+    } 
+
+
+
 }
