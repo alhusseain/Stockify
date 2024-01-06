@@ -1,6 +1,7 @@
 ﻿@page
 @model WebApplication1.Pages.ordersModel
 @{
+    Layout = TempData["Layout"] as string ?? "_Layout";
     ViewData["Title"] = "Stockify";
 }
 

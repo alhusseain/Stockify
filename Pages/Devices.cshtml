@@ -2,6 +2,7 @@
 @model WebApplication1.Pages.DevicesModel
 @{
     ViewData["Title"] = "Stockify";
+    Layout = TempData["Layout"] as string ?? "_Layout";
 }
 
 <div class="container mt-4">
