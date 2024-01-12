@@ -61,7 +61,7 @@ namespace WebApplication1.Pages
 
         public IActionResult OnPost()
             {
-                string connection = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
+                string connection = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=DESKTOP-9IHIA03";
                 SqlConnection con = new SqlConnection(connection);
                 string query = "";
 

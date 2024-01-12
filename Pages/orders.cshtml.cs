@@ -8,24 +8,60 @@ namespace WebApplication1.Pages
     public class ordersModel : PageModel
     {
         public List<orderinfo> orderinfoo { get; set; } = new List<orderinfo>();
+        public int oid{get;set;}
+        
+        [BindProperty (SupportsGet = true)]
+        public int current_i{get;set;}
 
-        public async Task OnGetAsync()
+        //int id{get;set;}
+
+        // public ordersModel()
+        // {
+        //     id = OrderID;
+        // }
+        private int k;
+        // public ordersModel()
+        // {
+        //     for(k=0;k<current_i;k++)
+        //     {
+        //         oid++;
+        //     }
+        // }
+
+
+        public void OnGet()
         {
             try
             {
-                string connectionString = "Server=KAREEM;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
-
+                List<int> orderid = new List<int>();
+                string connectionString = "Server=DESKTOP-9IHIA03;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
+                using (SqlConnection connection1 = new SqlConnection(connectionString))
+                {
+                    connection1.Open();
+                    string sqlQuery1 = "select OrderID from Orders";
+                    using (SqlCommand command1 = new SqlCommand(sqlQuery1, connection1))
+                    {
+                        using (SqlDataReader reader1 = command1.ExecuteReader())
+                        {
+                            while (reader1.Read())
+                            {
+                                orderid.Add(Convert.ToInt32(reader1["OrderID"]));
+                            }
+                        }
+                    }
+                    //connection1.Close();
+                }
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    await connection.OpenAsync();
+                    connection.Open();
 
-                    string sqlQuery = "select o.barcode , p.Product_name , p.price , o.product_multiple from OrderInfo as o, Products as p where o.barcode = p.Barcode Order BY product_multiple Asc";
+                    string sqlQuery = "select o.barcode , p.Product_name , p.price , o.product_multiple from OrderInfo as o, Products as p where o.barcode = p.Barcode and o.order_id = " +orderid[current_i]+ " Order BY product_multiple Asc";
 
                     using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                     {
-                        using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            while (await reader.ReadAsync())
+                            while (reader.Read())
                             {
                                 orderinfo order = new orderinfo
                                 {
@@ -49,6 +85,7 @@ namespace WebApplication1.Pages
                 throw; // Re-throw the exception to propagate it further if needed
             }
         }
+
     }
 
     public class orderinfo

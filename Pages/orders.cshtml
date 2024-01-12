@@ -8,8 +8,12 @@
 <div class="container">
     <div class="jumbotron mt-5">
         <h1 class="display-4">Orders can be found here</h1>
-        <p class="lead">Retail Management was never easier!.</p>
-
+        @* <p class="lead">Retail Management was never easier!.</p> *@
+        <form method="get">
+            <label for="selectid">ID: </label>
+            <input type="number" id="selectid" asp-for="@Model.current_i" placeholder="@Model.current_i" required>
+            <button type="submit">select</button>
+        </form>
         <div id ="printableArea" class="table-responsive" >
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
@@ -67,6 +71,7 @@
     function deleteRow(button) {
         // Find the closest 'tr' element and remove it
         var row = button.closest('tr');
+
         var totalCell = row.cells[5]; // Total Price cell
         var totalAmount = parseFloat(totalCell.innerHTML.replace('$', ''));
 
@@ -108,6 +113,7 @@
         rows.forEach(row => {
             var totalCell = row.cells[5]; // Total Price cell
             newTotal += parseFloat(totalCell.innerHTML.replace('$', ''));
+        
         });
 
         // Display the updated total amount

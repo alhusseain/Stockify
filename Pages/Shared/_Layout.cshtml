@@ -29,13 +29,13 @@
                 <li class="nav-item @(Context.Request.Path.StartsWithSegments("/Employees") ? "active" : "")">
                     <a class="nav-link" asp-page="/Employees">Employees</a>
                 </li>
-                <li class="nav-item @(Context.Request.Path.StartsWithSegments("/stats") ? "active" : "")">
+                @* <li class="nav-item @(Context.Request.Path.StartsWithSegments("/stats") ? "active" : "")">
                     <a class="nav-link" asp-page="/stats">Stats</a>
-                </li>
-                <li class="nav-item @(Context.Request.Path.StartsWithSegments("/suppliers") ? "active" : "")">
+                </li> *@
+                @* <li class="nav-item @(Context.Request.Path.StartsWithSegments("/suppliers") ? "active" : "")">
                     <a class="nav-link" asp-page="/suppliers">Suppliers</a>
                 </li>
-                
+                 *@
                 <li class="nav-item @(Context.Request.Path.StartsWithSegments("/orders") ? "active" : "")">
                     <a class="nav-link" asp-page="/orders">Orders</a>
                 </li>

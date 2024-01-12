@@ -45,12 +45,12 @@
     <div class="jumbotron mt-5">
         <h1 class="display-4">Employees Info can be found here</h1>
         <p class="lead">Retail Management was never easier!.</p>
-        <div class="search-container" >
-            <form action="/action_page.php">
-                <input type="text" placeholder="Search.." name="search">
+        @* <div class="search-container" >
+            <form method="get" asp-page-hanlder="search">
+                <input type="text" placeholder="Search.." name="search" asp-for="@Model.search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
-        </div>
+        </div> *@
         <div class="table-responsive">
             <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
