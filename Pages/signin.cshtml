@@ -102,8 +102,6 @@
             <img src="~/static/glogo.png" alt="Logo" height="125" width="125">
         </div>
 
-        <a class="nav-link justify-content-center" asp-page="/Admin">ADMIN</a>
-
         <form method="post" asp-page="/signin">
             <div class="form-group">
                 <label for="username">Username:</label>
@@ -130,15 +128,11 @@
 
 
         <script>
-            var userRole = Context.Request.Cookies["userRole"];
-            if (userRole == "Manager") {
-                
-            }
-            else {
-                Layout = "_CLayout";
-            }
-            }
-        </script>
+            var role = "@Model.TempData["Layout"]";
+
+            document.cookie = "userRole=" + role;
+
+        </script> 
 
     </div>
 </body>

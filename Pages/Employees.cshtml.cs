@@ -1,30 +1,24 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Data;
 using WebApplication1.Models;
 using System.Data.SqlClient;
-using Microsoft.AspNetCore.SignalR;
-using System.Reflection.Metadata;
+using Microsoft.Extensions.Configuration;
+using System.Xml.Linq;
 
 namespace WebApplication1.Pages
 {
+    [BindProperties(SupportsGet = true)]
 
     public class EmployeesModel : PageModel
     {
+
         private readonly ILogger<EmployeesModel> _logger;
-        public DB db { get; set; } = new DB();
+        public DB db { get; set; }
         public DataTable EmployeeDataTable { get; set; }
-        public Employee employee { get; set; }
-        [BindProperty]
-        public string employeeId { get; set; }
-        [BindProperty]
-        public string name { get; set; }
-        [BindProperty]
-        public string worksAs { get; set; }
-        [BindProperty]
-        public string phoneNumber { get; set; }
-        [BindProperty]
-        public string branch { get; set; }
+
+        public Employee emplist { get; set; }
 
         public EmployeesModel(ILogger<EmployeesModel> logger, DB db)
         {
@@ -37,47 +31,42 @@ namespace WebApplication1.Pages
             EmployeeDataTable = db.ReadTable("Employee");
         }
 
-        public IActionResult OnPostDelete(string employeeId)
-        {
-            // Your delete logic
-            return new JsonResult(new { success = true });
-        }
 
-        public IActionResult OnPostUpdate(Employee emp)
-        {
-            // Your update logic
-            return new JsonResult(new { success = true });
-        }
+        [BindProperty]
+        public string EmployeeID { get; set; }
+
+        [BindProperty]
+        public string Fname { get; set; }
+
+        [BindProperty]
+        public string RoleName { get; set; }
+
+        [BindProperty]
+        public string PhoneNumber { get; set; }
+        [BindProperty]
+        public string Branch_ID { get; set; }
 
 
-        public void OnPost()
+
+        public IActionResult OnPostInsert()
         {
-            // employee.EmployeeID=employeeId;
-            // employee.Fname=name;
-            // employee.RoleName=worksAs;
-            // employee.PhoneNumber=phoneNumber;
-            // employee.Branch_ID=branch;
-            // db.AddEmployee(employee);
-            // EmployeeDataTable = db.ReadTable("Employee");
-            string connection = "Server=DESKTOP-9IHIA03;Database=StockifyUpdated;Integrated Security=True;Encrypt=False;";
+
+            string connection = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=DESKTOP-9IHIA03";
             SqlConnection con = new SqlConnection(connection);
             string query = "insert into Employee(Fname, EmployeeID, RoleName, PhoneNumber, Branch_ID) values(@Fname, @EmployeeID,@RoleName,@PhoneNumber,@Branch_ID)";
             SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@Fname", name);
-            cmd.Parameters.AddWithValue("@EmployeeID", int.Parse(employeeId));
-            cmd.Parameters.AddWithValue("@RoleName", worksAs);
-            cmd.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
-            cmd.Parameters.AddWithValue("@Branch_ID", int.Parse(branch));
+            cmd.Parameters.AddWithValue("@Fname", Fname);
+            cmd.Parameters.AddWithValue("@EmployeeID", int.Parse(EmployeeID));
+            cmd.Parameters.AddWithValue("@RoleName", RoleName);
+            cmd.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
+            cmd.Parameters.AddWithValue("@Branch_ID", int.Parse(Branch_ID));
             Console.Write(query);
-            string res = "";    // this is for storing error messages (if any) and returning them from the function 
-
+            string res = "";
             try
             {
                 con.Open();
                 res = cmd.ExecuteNonQuery().ToString();
-                //return RedirectToPage("Employees");
-                //db.AddEmployee(employee);
-                //EmployeeDataTable = db.ReadTable("Employee");
+
             }
             catch (SqlException err)
             {
@@ -85,10 +74,11 @@ namespace WebApplication1.Pages
             }
             finally
             {
+
                 con.Close();
             }
-            //return Page();
-
+            return RedirectToPage("/Employees");            
         }
     }
 }
+

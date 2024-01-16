@@ -1,6 +1,7 @@
 ﻿@* @page
 @model WebApplication1.Pages.productsModel
 @{
+ Layout = TempData["Layout"] as string ?? "_Layout";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -215,6 +216,7 @@
 @page
 @model WebApplication1.Pages.ProductsModel
 @{
+    Layout = ViewData["Layout"] as string ?? "_Layout";
 }
 
 <!DOCTYPE html>
@@ -227,6 +229,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <style>
         body {
             display: flex;
@@ -245,6 +253,7 @@
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
             color: #ffffff; 
             z-index: 1000; 
+            transition: 0.5s;
         }
 
         .categories {
@@ -298,7 +307,7 @@
 
         .product-info {
             position: relative;
-            bottom: 23%;
+            bottom: 13%;
             left: 0;
             width: 100%;
             text-align: center;
@@ -323,6 +332,15 @@
             border-radius: 5px;
             margin-bottom: 10px;
         }
+        .tab-content {
+            width: 300px;
+            height: 200px;
+            display: none;
+        }
+
+        .tab-content:target {
+          display: block;
+                        }
 
         .product-name {
             position: absolute;
@@ -348,43 +366,103 @@
     </style>
 </head>
 <body>
-
+<div class="container-fluid">
     <div class="sidebar">
         <h4 class="mb-4 category-heading" data-toggle="collapse" href="#categoriesCollapse" role="button" aria-expanded="false" aria-controls="categoriesCollapse">
             Categories
         </h4>
         <div class="collapse" id="categoriesCollapse">
             <ul class="categories">
+                @foreach(var category in Model.categories )
+                {
                 <li class="category-item">
-                    <a href="#" class="category-link" data-category="grocery">Grocery</a>
+                    <a href="#@category" class="category-link" data-category=@category>@category</a>
                 </li>
-                <li class="category-item">
-                    <a href="#" class="category-link" data-category="snacks">Snacks</a>
-                </li>
-                <li class="category-item">
-                    <a href="#" class="category-link" data-category="drinks">Drinks</a>
-                </li>
-                <li>
-                    <button class='btn btn-primary'> Add a product</button>
-                </li>
+                }
                 <!-- Add more categories as needed -->
+                <li class="category-item">
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#Addproduct"> Add new product</button>
+                </li>
             </ul>
 
         </div>
     </div>
 
-    <div class="container">
-        <div class="content">
-            
+    
+    
+    <div class="content">
+        <!-- Display area for products outside the sidebar -->
+        <div class="product-container" id="productContainer">
+            @foreach (var category1 in Model.categories)
+            {
+                <div id="@category1" class="tab-content">
+                @foreach(var product in Model.products[category1])
+                {
+                    <div class="product-tile">
+                            <img src="@product.Image" alt="NO IMAGE FOUND">
+                            <div class="product-name">@product.Name</div>
+                            <div class="product-info">Capacity: @product.Quantity<span class="total-quantity">5</span></div>
+                    </div>
+                }
+                </div>
+
+            }
+
         </div>
     </div>
+</div>
 
-    <!-- Display area for products outside the sidebar -->
-    <div class="product-container" id="productContainer"></div>
+<div class="modal fade" id="Addproduct" tabindex="-1" role="dialog" aria-labelledby="AddproductLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="AddproductLabel">Product input</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form to Add or Edit an employee -->
+                <form method="post" id="productForm">
 
+                    <div class="form-group">
+                        <label for="employeeId">Product Barcode:</label>
+                        <input class="form-control" type="text" id="employeeId" asp-for="@Model.Barcode" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Product Name:</label>
+                        <input class="form-control" asp-for="@Model.Name" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Supplier Code:</label>
+                        <input class="form-control" asp-for="@Model.supply_code" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="branch">Max/Initial Amount:</label>
+                        <input class="form-control" type="text" id="branch" asp-for="@Model.Max" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="branch">Reorder level:</label>
+                        <input class="form-control" type="text" id="branch" asp-for="@Model.Recorder_level" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="worksAs">Price:</label>
+                        <input class="form-control" type="text" id="worksAs" asp-for="@Model.Price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Image link:</label>
+                        <input class="form-control"  asp-for="@Model.Image" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">ADD Product</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
     
 
-    <script>
+    @* <script>
         function updateQuantity(productName, isIncrement) {
             $.ajax({
                 type: "POST",
@@ -426,7 +504,29 @@
         }
 
         // Example product data for each category
-        const products = {
+        //const products = JSON.parse(document.getElementById("products").textContent);
+       
+        var productstring=JSON.stringify(@TempData["products"]);
+        const products = JSON.parse(productstring);
+
+        
+         @* $.ajax({
+            url:"/Models/GetDict",
+            type:"GET",
+            dataType:"json",
+            success:function(fetched)
+            {
+                Console.log(fetched);
+                product=fetched;
+            },
+            erorr:function(req,status,error)
+            {
+               // console.WriteLine(status);
+            }
+
+
+        }) ; 
+        = {
             grocery: [
                 { name: 'Rice', image: '/static/doha.jpg', quantity: 5 },
                 { name: 'Crystal Oil', image: '/static/oil.png', quantity: 5 },
@@ -448,14 +548,13 @@
                 // Add more drinks as needed
             ],
             // Add more categories with their respective products
-        };
+        };*/
 
-        $(document).ready(function () {
             $('.category-link').click(function () {
                 const category = $(this).data('category');
-                displayProducts(products[category], category);
+                displayProducts(product[category], category);
             });
         });
-    </script>
+    </script> *@
 </body>
 </html>

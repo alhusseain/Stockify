@@ -70,14 +70,12 @@
             <h3>Choose Your Role</h3>
         </div>
 
-        <a onclick="setRoleAndRedirect('Manager')" class="btn btn-choose btn-manager">Manager</a>
-        <a onclick="setRoleAndRedirect('Cashier')" class="btn btn-choose btn-cashier">Cashier</a>
-        <a onclick="setRoleAndRedirect('Maintainer')" class="btn btn-choose btn-maintainer">Maintainer</a>
-        <a onclick="setRoleAndRedirect('Transporter')" class="btn btn-choose btn-transporter">Transporter</a>
+        <a onclick="Redirect()" class="btn btn-choose btn-manager">Signin</a>
+        
 
         <script>
-            function setRoleAndRedirect(role) {
-                document.cookie = "userRole=" + role;
+            function Redirect() {
+               
                 window.location.href = "/signin"; // Redirect to the signin page
             }
         </script>

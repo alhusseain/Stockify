@@ -1,24 +1,25 @@
 ﻿@{
+    
     var userRole = Context.Request.Cookies["userRole"];
     if (userRole == "Manager")
     {
-        Layout = "_Layout";
-
+        TempData["CustomLayout"] = "_Layout";
     }
     else if (userRole == "Cashier")
     {
-        Layout = "_CLayout";
+        TempData["CustomLayout"] = "_CLayout";
     }
-
     else if (userRole == "Maintainer")
     {
-        Layout = "_MLayout";
+        TempData["CustomLayout"] = "_MLayout";
     }
     else if (userRole == "Transporter")
     {
-        Layout = "_TLayout";
+        TempData["CustomLayout"] = "_TLayout";
     }
-
-
 }
+
+
+
+
 

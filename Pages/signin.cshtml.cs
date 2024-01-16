@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using System.Data.SqlClient;
+using System.ComponentModel.DataAnnotations;
 
 
 
@@ -17,6 +18,9 @@ namespace WebApplication1.Pages
         [BindProperty]
         public string Password { get; set; }
 
+        [BindProperty]
+        public string? KRole { get; set; }
+
         public signinModel(ILogger<signinModel> logger)
         {
             _logger = logger;
@@ -24,9 +28,10 @@ namespace WebApplication1.Pages
 
         public IActionResult OnPost()
         {
+
             if (ModelState.IsValid)
             {
-                string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Stockify;Data Source=LAPTOP-GTTG2OGR";
+                string connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=StockifyUpdated;Data Source=DESKTOP-9IHIA03";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -51,7 +56,45 @@ namespace WebApplication1.Pages
 
                             if (hashedEnteredPassword == storedHashedPassword)
                             {
-                                return RedirectToPage("/home");
+                                string roleQuery = "SELECT e.Rolename FROM Signups s " +
+                                   "JOIN Employee e ON s.Employee_id = e.EmployeeID " +
+                                   "WHERE s.Username = @Username";
+
+                                    using (SqlCommand roleCommand = new SqlCommand(roleQuery, connection))
+                                    {
+                                        roleCommand.Parameters.AddWithValue("@Username", Username);
+
+                                        object roleResult = roleCommand.ExecuteScalar();
+
+                                        if (roleResult != null)
+                                        {
+                                            string userRole = roleResult.ToString();
+
+                                          if (userRole == "Cashier")
+                                        {
+                                            TempData["Layout"] = "_CLayout";
+                                        }
+                                         else if (userRole == "Manager")
+                                        {
+                                            TempData["Layout"] = "_Layout";
+
+                                        }
+                                         else if (userRole == "Transporter")
+                                        {
+                                            TempData["Layout"] = "_TLayout";
+
+                                        }
+                                         else if (userRole == "Transporter")
+                                        {
+                                            TempData["Layout"] = "_TLayout";
+
+                                        }
+                                          TempData.Keep();
+
+                                        return RedirectToRolePage(userRole);
+                                            
+                                        }
+                                    }
                             }
                         }
                     }
@@ -59,6 +102,17 @@ namespace WebApplication1.Pages
             }
 
             return Page();
+        }
+
+
+        public void OnGet()
+        {
+            var customLayout = TempData["CustomLayout"] as string;
+            if (!string.IsNullOrEmpty(customLayout))
+            {
+                // Use customLayout as needed
+                ViewData["Layout"] = customLayout;
+            }
         }
 
         private string HashPassword(string password, byte[] salt)
@@ -70,5 +124,24 @@ namespace WebApplication1.Pages
                 iterationCount: 10000,
                 numBytesRequested: 256 / 8));
         }
-    }
+        
+        private IActionResult RedirectToRolePage(string userRole)
+        {
+          if   (userRole == "Admin")
+            {
+                
+                return RedirectToPage("/Admin");
+            }
+          else
+            {
+                return RedirectToPage("/home");
+
+            }
+
+
+        }
+    } 
+
+
+
 }

@@ -1,16 +1,24 @@
 ﻿@page
 @model homeModel
+
 @{
+    
+    Layout = TempData["Layout"] as string ?? "_Layout";
     ViewData["Title"] = "Stockify";
+   
 }
+
 
 
     <div class="container">
         <div class="jumbotron mt-5">
             <h1 class="display-4">Welcome to Stockify!</h1>
             <p class="lead">Retail Management was never easier!.</p>
+
         </div>
     </div>
+
+
 
 
 
